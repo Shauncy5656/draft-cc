@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<title>Fantasy Draft Command Center v1.0</title>
+<title>Fantasy Draft Command Center v1.12</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.app{max-width:540px;margin:0 auto;padding:18px 12px 52px}.eyebrow{font-size:11px;color:#38bdf8;font-weight:900;letter-spacing:1.4px}.title{font-size:24px;font-weight:900;margin:4px 0 14px}.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;background:#0d1b2d;border-radius:14px;padding:5px;margin-bottom:14px;position:sticky;top:0;z-index:5}.tab{background:#13243a;color:#91a3ba;border:0;border-radius:10px;padding:10px 2px;font-weight:800}.tab.active{background:#1c3a5f;color:#fff}.view{display:none}.view.active{display:block}.hero,.card{background:#0d1b2d;border:1px solid #1b304c;border-radius:18px;padding:16px;margin-bottom:16px}.hero{background:#102642;border-color:#23527f}.label{font-size:11px;color:#38bdf8;font-weight:900;letter-spacing:1.1px}.money{font-size:44px;font-weight:900;line-height:1.05;margin-top:4px}.muted{color:#8ea0b8;font-size:12px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.metric{background:#0a1a2e;border-radius:12px;padding:10px}.metric b{display:block;font-size:16px}.metric span{display:block;color:#71849d;font-size:9px;font-weight:800;margin-top:3px}.section{font-size:18px;font-weight:900;margin:18px 2px 10px}.search,.bid,.select,.nameInput{width:100%;background:#081421;color:#fff;border:1px solid #1b324f;border-radius:12px;padding:12px}.filters{display:flex;gap:6px;overflow:auto;padding:10px 0}.chip{border:1px solid #1e3654;background:#13243a;color:#a4b4c8;border-radius:999px;padding:8px 11px;font-weight:800;font-size:11px;white-space:nowrap}.chip.active{background:#0ea5e9;color:#03131f;border-color:#38bdf8}.player{display:flex;align-items:center;gap:10px;padding:11px 6px;border-bottom:1px solid #13243a}.player.selected{background:#102b48;border-radius:12px}.pos{width:38px;height:38px;border-radius:10px;background:#18304f;color:#6dd2ff;display:grid;place-items:center;font-weight:900;font-size:11px}.pinfo{flex:1;min-width:0}.pname{font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.value{color:#4ade80;font-weight:900}.draftbox{background:#10213a;border:1px solid #26496f;border-radius:15px;padding:14px;margin-top:14px}.field{font-size:10px;color:#71849d;font-weight:900;letter-spacing:1px;margin:12px 0 7px}.teamsGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.teamBtn{border:1px solid #1e3654;background:#13243a;color:#a4b4c8;border-radius:10px;padding:9px 7px;font-size:11px;font-weight:800}.teamBtn.active{background:#183f67;color:#fff}.bid{font-size:24px;font-weight:900}.primary,.secondary,.danger{width:100%;margin-top:12px;border:0;padding:14px;border-radius:12px;font-weight:900}.primary{background:#38bdf8;color:#022033}.secondary{background:#19314e;color:#cce8ff}.danger{background:#3a1820;color:#ffb4c0}.recent,.teamrow,.target{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #13243a}.num{width:28px;color:#657a94;font-weight:900}.price{color:#4ade80;font-weight:900}.note{background:#101f35;border:1px solid #1d3f63;border-radius:14px;padding:13px;color:#9bb0c6;font-size:12px}.note b{color:#38bdf8}.status{display:inline-block;margin-top:10px;padding:6px 9px;border-radius:999px;background:#11311f;color:#74e39b;font-size:10px;font-weight:900}.recommend{background:#0d2438;border:1px solid #176a77;border-radius:16px;padding:14px;margin-bottom:12px}.recommend .big{font-size:22px;font-weight:900}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#173452;color:#aad8ff;font-size:10px;font-weight:900;margin:5px 4px 0 0}.positive{color:#4ade80}.warn{color:#facc15}.negative{color:#fb7185}.teamcard{background:#0c192b;border:1px solid #1c314d;border-radius:16px;padding:13px;margin-bottom:10px}.teamhead{display:flex;justify-content:space-between;gap:8px}.teamname{font-weight:900}.rosterchips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.slot{font-size:9px;padding:4px 6px;border-radius:7px;background:#122944;color:#a4b4c8}.slot.filled{background:#153826;color:#8bf0ab}.bar{height:8px;background:#0a1422;border-radius:99px;overflow:hidden;margin-top:8px}.bar>div{height:100%;background:#38bdf8}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tiny{font-size:10px;color:#71849d}.right{text-align:right}.rank{font-size:11px;color:#71849d;width:24px}.targetScore{font-size:12px;font-weight:900;color:#38bdf8}.divider{height:1px;background:#1a304b;margin:12px 0}.settingsRow{margin-bottom:12px}.settingsRow label{display:block;font-size:11px;color:#91a3ba;margin-bottom:5px;font-weight:800}.intelGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.intelBox{background:#0a1a2e;border:1px solid #183452;border-radius:13px;padding:11px}.intelBox b{display:block;font-size:15px;margin-top:3px}.signal{font-size:11px;font-weight:900;letter-spacing:.5px}.run{color:#facc15}.go{color:#4ade80}.hold{color:#7dd3fc}.nom{color:#c4b5fd}.positionRow{display:grid;grid-template-columns:42px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #13243a}.meter{height:6px;background:#0a1422;border-radius:99px;overflow:hidden;margin-top:5px}.meter>div{height:100%;background:#38bdf8}.decision{font-size:22px;font-weight:900;margin:3px 0}.subtle{font-size:11px;color:#70869f}.threat{display:flex;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid #13243a}.threat:last-child{border-bottom:0}.threatScore{min-width:46px;text-align:right;font-weight:900;color:#facc15}.dangerTag{display:inline-block;padding:4px 7px;border-radius:999px;background:#3a2511;color:#fde68a;font-size:9px;font-weight:900}.safeTag{display:inline-block;padding:4px 7px;border-radius:999px;background:#11311f;color:#86efac;font-size:9px;font-weight:900}
 .warGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.warBox{background:#101c2c;border:1px solid #29415f;border-radius:13px;padding:11px}.warBox b{display:block;font-size:16px;margin-top:3px}.control{font-size:24px;font-weight:900;margin:4px 0}.dominant{color:#4ade80}.leverage{color:#7dd3fc}.even{color:#facc15}.defensive{color:#fb7185}.attack{padding:11px 0;border-bottom:1px solid #13243a}.attack:last-child{border-bottom:0}.attackTitle{font-weight:900;font-size:14px}.badge{display:inline-block;padding:4px 7px;border-radius:999px;background:#172d48;color:#aad8ff;font-size:9px;font-weight:900;margin-left:5px}.endgameGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.endgameBox{background:#0d2137;border:1px solid #245078;border-radius:13px;padding:11px}.endgameBox b{display:block;font-size:16px;margin-top:3px}.phase{font-size:24px;font-weight:900;margin:4px 0}.early{color:#7dd3fc}.middle{color:#c4b5fd}.late{color:#facc15}.closing{color:#4ade80}.actionLine{background:#0a1a2e;border-left:3px solid #38bdf8;border-radius:10px;padding:10px 11px;margin-top:9px;font-size:12px}.marketRow{display:grid;grid-template-columns:42px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #13243a}.controlTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#11311f;color:#86efac}.riskTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#3a2511;color:#fde68a}</style>
@@ -1037,4 +1037,49 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
+<script id="v112-team-manager-override">
+(function(){
+  const KEY='ffdc-v10';
+  function app(){ return window.__FDCC && window.__FDCC.state ? window.__FDCC : null; }
+  function teams(){ const a=app(); return a && Array.isArray(a.state.teams) ? a.state.teams : []; }
+  function persist(){
+    const a=app(); if(!a)return false;
+    try{ localStorage.setItem(KEY, JSON.stringify({...a.state, selected:null, query:''})); }catch(e){}
+    try{ if(typeof a.saveState==='function') a.saveState(); }catch(e){}
+    window.state=a.state; window.teams=a.state.teams;
+    return true;
+  }
+  function redraw(){
+    const a=app(); try{ if(a&&typeof a.render==='function')a.render(); }catch(e){}
+    renderManager();
+  }
+  function renderManager(){
+    const host=document.getElementById('leagueTeamsManager'); if(!host)return;
+    const ts=teams();
+    host.innerHTML=`<div class="section" style="margin-top:0">League Teams</div>
+      <div class="muted" style="margin-bottom:10px">Rename or remove teams here. Changes save directly to the live league.</div>
+      <div id="v112TeamRows">${ts.map((t,i)=>`<div class="leagueTeamRow"><div class="leagueTeamNum">T${i+1}</div><input class="leagueTeamInput" data-v112-index="${i}" value="${String(t.name||('Team '+(i+1))).replace(/&/g,'&amp;').replace(/\"/g,'&quot;')}" maxlength="28"><button type="button" class="removeTeamBtn" data-v112-remove="${i}">×</button></div>`).join('')}</div>
+      <div class="two" style="margin-top:10px"><button type="button" id="v112Add" class="primary" style="margin-top:0">ADD TEAM</button><button type="button" id="v112Save" class="secondary" style="margin-top:0">SAVE CHANGES</button></div>
+      <div id="v112Status" class="muted" style="margin-top:8px">${ts.length} active teams · min 2 · max 10 · Build v1.12</div>`;
+  }
+  function saveNames(){
+    const a=app(); if(!a)return;
+    document.querySelectorAll('[data-v112-index]').forEach(inp=>{ const i=Number(inp.dataset.v112Index); if(a.state.teams[i]) a.state.teams[i].name=(inp.value||'').trim()||('Team '+(i+1)); });
+    persist();
+    const st=document.getElementById('v112Status'); if(st)st.textContent='Saved ✓ · '+a.state.teams.length+' active teams · Build v1.12';
+    try{ if(typeof a.render==='function')a.render(); }catch(e){}
+    setTimeout(renderManager,50);
+  }
+  function addTeam(){ const a=app(); if(!a)return; if(a.state.teams.length>=10){alert('Maximum 10 teams.');return;} const i=a.state.teams.length; a.state.teams.push({id:i,name:'Team '+(i+1),budget:Number(a.state.budget||350),players:[]}); persist(); redraw(); }
+  function removeTeam(i){ const a=app(); if(!a)return; if(a.state.teams.length<=2){alert('Minimum 2 teams.');return;} const nm=a.state.teams[i]?.name||('Team '+(i+1)); if(!confirm('Remove '+nm+'?'))return; if(Array.isArray(a.state.picks)){ a.state.picks=a.state.picks.filter(pk=>pk.team!==i && pk.teamIndex!==i); a.state.picks.forEach(pk=>{if(typeof pk.team==='number'&&pk.team>i)pk.team--; if(typeof pk.teamIndex==='number'&&pk.teamIndex>i)pk.teamIndex--;}); } a.state.teams.splice(i,1); a.state.teams.forEach((t,j)=>t.id=j); persist(); document.dispatchEvent(new CustomEvent('fdcc-team-deleted',{detail:i})); redraw(); }
+  document.addEventListener('click',e=>{ const sv=e.target.closest?.('#v112Save'); if(sv){e.preventDefault();e.stopPropagation();saveNames();return;} const ad=e.target.closest?.('#v112Add'); if(ad){e.preventDefault();e.stopPropagation();addTeam();return;} const rm=e.target.closest?.('[data-v112-remove]'); if(rm){e.preventDefault();e.stopPropagation();removeTeam(Number(rm.dataset.v112Remove));return;} },true);
+  function init(){
+    // prevent Settings card upgrader from wrapping the League Teams manager
+    const host=document.getElementById('leagueTeamsManager'); if(host){host.dataset.v112='1';}
+    renderManager();
+    document.querySelector('.tab[data-tab="settings"]')?.addEventListener('click',()=>setTimeout(renderManager,30));
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
 </body></html>
