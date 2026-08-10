@@ -971,7 +971,10 @@ if ('serviceWorker' in navigator) {
       const i=Number(inp.dataset.index);
       if(teams[i]) teams[i].name=(inp.value||'').trim()||('Team '+(i+1));
     });
+    window.teams=teams;
+    if(window.__FDCC)window.__FDCC.state.teams=teams;
     saveCore();
+    try{ if(window.__FDCC&&typeof window.__FDCC.render==='function')window.__FDCC.render(); }catch(e){}
     refreshEverything();
     render();
     const b=document.getElementById('saveTeamsBtn'); if(b){const old=b.textContent;b.textContent='SAVED ✓';setTimeout(()=>b.textContent=old,1000)}
@@ -999,9 +1002,36 @@ if ('serviceWorker' in navigator) {
   }
   function init(){
     render();
-    document.getElementById('addTeamBtn')?.addEventListener('click',addTeam);
-    document.getElementById('saveTeamsBtn')?.addEventListener('click',saveNames);
-    document.querySelector('.tab[data-tab="settings"]')?.addEventListener('click',()=>setTimeout(render,0));
+    // Use delegated handlers so the collapsible Settings UI can rebuild its DOM
+    // without disconnecting Add / Save / Remove controls.
+    document.addEventListener('click',function(e){
+      const add=e.target.closest&&e.target.closest('#addTeamBtn');
+      if(add){ e.preventDefault(); addTeam(); return; }
+      const save=e.target.closest&&e.target.closest('#saveTeamsBtn');
+      if(save){ e.preventDefault(); saveNames(); return; }
+      const rem=e.target.closest&&e.target.closest('.removeTeamBtn');
+      if(rem){
+        e.preventDefault();
+        const idx=Number(rem.dataset.remove), teams=getTeams();
+        if(teams.length<=MIN_TEAMS){ alert('The league needs at least 2 teams.'); return; }
+        const nm=teams[idx]?.name||('Team '+(idx+1));
+        if(!confirm('Remove '+nm+' from the league? Any draft picks assigned to that team will be returned to the player pool.'))return;
+        reindexPicksAfterDelete(idx);
+        teams.splice(idx,1);
+        teams.forEach((t,i)=>{ if(typeof t.id==='number')t.id=i; if(typeof t.index==='number')t.index=i; });
+        window.teams=teams;
+        if(window.__FDCC)window.__FDCC.state.teams=teams;
+        document.dispatchEvent(new CustomEvent('fdcc-team-deleted',{detail:idx}));
+        saveCore(); render(); refreshEverything();
+      }
+    });
+    document.querySelector('.tab[data-tab="settings"]')?.addEventListener('click',()=>setTimeout(render,20));
+    // Re-render after Settings cards are collapsed/expanded or rebuilt.
+    const settings=document.getElementById('view-settings');
+    if(settings){
+      const mo=new MutationObserver(()=>{ if(document.getElementById('leagueTeamsManager')) setTimeout(render,0); });
+      mo.observe(settings,{childList:true,subtree:false});
+    }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
 })();
