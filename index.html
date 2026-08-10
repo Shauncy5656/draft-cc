@@ -59,6 +59,13 @@ details.mobileDrop[open]>summary:after{content:'▴'}
 .dropBody{padding:0 13px 13px}.dropMeta{font-size:10px;color:#A5ACAF;font-weight:800}.dropValue{color:#69BE28;font-weight:1000}
 .compactSelect{width:100%;background:#00172e;color:#fff;border:1px solid #4b7188;border-radius:10px;padding:10px;font-weight:800}
 </style>
+<style id="league-team-manager-style">
+.leagueTeamRow{display:grid;grid-template-columns:42px 1fr 42px;gap:8px;align-items:center;margin-bottom:8px}
+.leagueTeamNum{height:42px;border-radius:10px;background:#06315a;color:#69BE28;display:grid;place-items:center;font-size:11px;font-weight:1000;border:1px solid #4b7188}
+.leagueTeamInput{width:100%;background:#00172e;color:#fff;border:1px solid #4b7188;border-radius:10px;padding:11px 12px;font-size:14px;font-weight:800}
+.leagueTeamInput:focus{outline:none;border-color:#69BE28;box-shadow:0 0 0 2px rgba(105,190,40,.15)}
+.removeTeamBtn{height:42px;border-radius:10px;border:1px solid #7f3144;background:#3a1820;color:#ffb4c0;font-weight:1000;font-size:18px}
+</style>
 <style id="seahawks-theme">
 :root{--navy:#002244;--deep:#001a33;--green:#69BE28;--gray:#A5ACAF}
 body{background:var(--deep)!important}.eyebrow,.label,.targetScore,.note b{color:var(--green)!important}
@@ -202,7 +209,19 @@ body{background:var(--deep)!important}.eyebrow,.label,.targetScore,.note b{color
   <div id="weeklyHistory" class="card"></div>
 </section>
 
-<section class="view" id="view-settings"><div class="section">League Settings</div><div class="card"><div class="settingsRow"><label>AUCTION BUDGET</label><input class="nameInput" id="budgetSetting" type="number" value="350"></div><div class="two"><div class="settingsRow"><label>TEAMS</label><input class="nameInput" value="10" disabled></div><div class="settingsRow"><label>ROSTER SPOTS</label><input class="nameInput" value="12" disabled></div></div><div class="settingsRow"><label>MY TEAM NAME</label><input class="nameInput" id="myTeamName" value="My Team"></div><button class="primary" id="saveSettings">SAVE SETTINGS</button><button class="danger" id="resetDraft">RESET ENTIRE DRAFT</button></div><div class="card"><div class="label">CUSTOM SCORING ENGINE · v0.7</div><div class="muted" style="margin-top:7px">5/pass TD · 6/rush-rec TD · 0.5 PPR · 25 pass yds/pt · 10 rush-rec yds/pt · -1 INT · -2 FL. Yardage-game and 40+ TD bonuses are modeled as expected bonus points because season projection feeds do not publish game-by-game/long-TD distributions.</div><div class="divider"></div><div class="two"><div><div class="tiny">PROJECTION FEED</div><b>3-source consensus</b></div><div><div class="tiny">LAST DATA PASS</div><b>Aug 10, 2026</b></div></div><div class="divider"></div><div class="muted">Seed statistics: ESPN + CBS Sports + FFToday consensus via FantasyPros. Footballguys is used as an independent sanity check on positional/player ranges.</div></div><div class="card"><div class="label">ROSTER</div><div class="muted" style="margin-top:7px">2 QB · 2 RB · 3 WR · 1 TE · 2 FLEX (RB/WR/TE) · 1 K · 1 DEF · no bench</div><div class="divider"></div><div class="label">SCORING PROFILE</div><div class="muted" style="margin-top:7px">5 pt pass TD · 0.5 PPR · yardage and long-play bonuses · -1 INT · -2 fumble lost. Custom points and baseline values are seeded from a current 2026 FantasyPros projection/auction dataset. Command values then adjust for your $350 budget and 2-QB roster. Your custom bonus-scoring stat-line recalculation is the next data layer.</div></div><div class="card"><div class="label">2026 DATA STATUS</div><div class="muted" style="margin-top:7px">Player pool: 165+ current 2026 options across QB, RB, WR, TE, K and DEF. Baseline points/value: FantasyPros projection-based salary-cap data captured Aug. 10, 2026. Cross-check signal: current RotoBaller 2026 rankings. The app does not claim those source values are already calculated with your unique bonus rules.</div></div><div class="note"><b>Version 0.7</b><br>Added dynamic player tiers, projection-cliff detection, wait-risk warnings and tier-aware BUY/WAIT decisions on top of the live room intelligence engine.</div></section>
+<section class="view" id="view-settings">
+
+<div class="card" id="leagueTeamsManager">
+  <div class="section" style="margin-top:0">League Teams</div>
+  <div class="muted" style="margin-bottom:10px">Rename, add, or remove teams. The rest of the app recalculates automatically.</div>
+  <div id="leagueTeamsList"></div>
+  <div class="two" style="margin-top:10px">
+    <button id="addTeamBtn" class="primary" style="margin-top:0">ADD TEAM</button>
+    <button id="saveTeamsBtn" class="secondary" style="margin-top:0">SAVE CHANGES</button>
+  </div>
+  <div id="leagueTeamsStatus" class="muted" style="margin-top:8px"></div>
+</div>
+<div class="section">League Settings</div><div class="card"><div class="settingsRow"><label>AUCTION BUDGET</label><input class="nameInput" id="budgetSetting" type="number" value="350"></div><div class="two"><div class="settingsRow"><label>TEAMS</label><input class="nameInput" value="10" disabled></div><div class="settingsRow"><label>ROSTER SPOTS</label><input class="nameInput" value="12" disabled></div></div><div class="settingsRow"><label>MY TEAM NAME</label><input class="nameInput" id="myTeamName" value="My Team"></div><button class="primary" id="saveSettings">SAVE SETTINGS</button><button class="danger" id="resetDraft">RESET ENTIRE DRAFT</button></div><div class="card"><div class="label">CUSTOM SCORING ENGINE · v0.7</div><div class="muted" style="margin-top:7px">5/pass TD · 6/rush-rec TD · 0.5 PPR · 25 pass yds/pt · 10 rush-rec yds/pt · -1 INT · -2 FL. Yardage-game and 40+ TD bonuses are modeled as expected bonus points because season projection feeds do not publish game-by-game/long-TD distributions.</div><div class="divider"></div><div class="two"><div><div class="tiny">PROJECTION FEED</div><b>3-source consensus</b></div><div><div class="tiny">LAST DATA PASS</div><b>Aug 10, 2026</b></div></div><div class="divider"></div><div class="muted">Seed statistics: ESPN + CBS Sports + FFToday consensus via FantasyPros. Footballguys is used as an independent sanity check on positional/player ranges.</div></div><div class="card"><div class="label">ROSTER</div><div class="muted" style="margin-top:7px">2 QB · 2 RB · 3 WR · 1 TE · 2 FLEX (RB/WR/TE) · 1 K · 1 DEF · no bench</div><div class="divider"></div><div class="label">SCORING PROFILE</div><div class="muted" style="margin-top:7px">5 pt pass TD · 0.5 PPR · yardage and long-play bonuses · -1 INT · -2 fumble lost. Custom points and baseline values are seeded from a current 2026 FantasyPros projection/auction dataset. Command values then adjust for your $350 budget and 2-QB roster. Your custom bonus-scoring stat-line recalculation is the next data layer.</div></div><div class="card"><div class="label">2026 DATA STATUS</div><div class="muted" style="margin-top:7px">Player pool: 165+ current 2026 options across QB, RB, WR, TE, K and DEF. Baseline points/value: FantasyPros projection-based salary-cap data captured Aug. 10, 2026. Cross-check signal: current RotoBaller 2026 rankings. The app does not claim those source values are already calculated with your unique bonus rules.</div></div><div class="note"><b>Version 0.7</b><br>Added dynamic player tiers, projection-cliff detection, wait-risk warnings and tier-aware BUY/WAIT decisions on top of the live room intelligence engine.</div></section>
 </div>
 <script>
 (function(){
@@ -211,7 +230,7 @@ var players=[{"id":1,"name":"Josh Allen","pos":"QB","nfl":"BUF","proj":372,"valu
 var statLines={"Josh Allen":{"passY":3815.6,"passTD":27.4,"int":11.2,"rushY":585.2,"rushTD":11.8,"fl":4.1},"Drake Maye":{"passY":4062.7,"passTD":28.3,"int":10.4,"rushY":505.5,"rushTD":3.7,"fl":5.6},"Lamar Jackson":{"passY":3654.9,"passTD":28.3,"int":9.6,"rushY":640.3,"rushTD":3.2,"fl":4.2},"Jayden Daniels":{"passY":3681.3,"passTD":23.8,"int":10.6,"rushY":685.9,"rushTD":4.7,"fl":2.8},"Jalen Hurts":{"passY":3572.8,"passTD":24.2,"int":7.4,"rushY":461.1,"rushTD":8.4,"fl":4.0},"Jaxson Dart":{"passY":3595.1,"passTD":22.6,"int":11.1,"rushY":549.4,"rushTD":6.5,"fl":2.9},"Joe Burrow":{"passY":4175.1,"passTD":33.3,"int":11.6,"rushY":179.1,"rushTD":1.4,"fl":1.9},"Brock Purdy":{"passY":4153.9,"passTD":27.7,"int":14.3,"rushY":304.1,"rushTD":3.8,"fl":4.3},"Dak Prescott":{"passY":4293.4,"passTD":30.9,"int":11.3,"rushY":173.6,"rushTD":1.7,"fl":2.8},"Trevor Lawrence":{"passY":3892.7,"passTD":26.6,"int":13.0,"rushY":321.1,"rushTD":4.9,"fl":3.4},"Jahmyr Gibbs":{"rushY":1381.4,"rushTD":13.8,"rec":70.9,"recY":580.5,"recTD":4.1,"fl":1.1},"Bijan Robinson":{"rushY":1428.0,"rushTD":9.5,"rec":79.6,"recY":736.4,"recTD":3.8,"fl":1.8},"Christian McCaffrey":{"rushY":1093.6,"rushTD":8.7,"rec":78.4,"recY":694.1,"recTD":4.6,"fl":1.1},"Jonathan Taylor":{"rushY":1509.8,"rushTD":12.9,"rec":45.1,"recY":338.2,"recTD":1.5,"fl":1.7},"Derrick Henry":{"rushY":1569.0,"rushTD":13.4,"rec":17.8,"recY":172.1,"recTD":0.7,"fl":1.7},"De'Von Achane":{"rushY":1197.2,"rushTD":6.0,"rec":65.3,"recY":490.9,"recTD":4.0,"fl":1.0},"James Cook III":{"rushY":1403.2,"rushTD":10.3,"rec":33.3,"recY":281.7,"recTD":1.9,"fl":2.4},"Ashton Jeanty":{"rushY":1107.5,"rushTD":8.0,"rec":58.7,"recY":414.2,"recTD":3.3,"fl":1.1},"Chase Brown":{"rushY":1040.1,"rushTD":7.8,"rec":64.0,"recY":427.9,"recTD":3.9,"fl":1.1},"Saquon Barkley":{"rushY":1310.7,"rushTD":8.2,"rec":42.0,"recY":330.4,"recTD":2.1,"fl":1.0},"Puka Nacua":{"rec":122.7,"recY":1617.3,"recTD":9.3,"rushY":95.6,"rushTD":1.4,"fl":1.0},"Ja'Marr Chase":{"rec":121.5,"recY":1512.0,"recTD":10.6,"rushY":17.0,"rushTD":0,"fl":1.0},"Jaxon Smith-Njigba":{"rec":110.9,"recY":1568.7,"recTD":9.2,"rushY":30.4,"rushTD":0.1,"fl":1.1},"Amon-Ra St. Brown":{"rec":117.0,"recY":1389.6,"recTD":10.5,"rushY":11.8,"rushTD":0,"fl":0.4},"Drake London":{"rec":101.7,"recY":1328.2,"recTD":9.4,"rushY":0,"rushTD":0,"fl":1.0},"CeeDee Lamb":{"rec":97.6,"recY":1296.6,"recTD":7.5,"rushY":12.5,"rushTD":0,"fl":0.3},"Rashee Rice":{"rec":98.8,"recY":1099.3,"recTD":9.7,"rushY":25.5,"rushTD":0.9,"fl":0.6},"Justin Jefferson":{"rec":98.6,"recY":1302.5,"recTD":6.8,"rushY":5.5,"rushTD":0,"fl":0.3},"A.J. Brown":{"rec":88.7,"recY":1234.4,"recTD":7.6,"rushY":0,"rushTD":0,"fl":0.3},"George Pickens":{"rec":82.6,"recY":1201.4,"recTD":8.4,"rushY":-0.3,"rushTD":0,"fl":0.5},"Trey McBride":{"rec":109.0,"recY":1051.0,"recTD":6.8,"fl":0.2},"Brock Bowers":{"rec":96.5,"recY":1025.3,"recTD":7.5,"fl":0.2},"Colston Loveland":{"rec":78.1,"recY":916.3,"recTD":6.7,"fl":0.2},"Tyler Warren":{"rec":83.0,"recY":871.2,"recTD":5.4,"fl":0.3},"Kyle Pitts Sr.":{"rec":79.5,"recY":881.3,"recTD":4.7,"fl":0.1},"Harold Fannin Jr.":{"rec":77.3,"recY":801.1,"recTD":5.4,"fl":0.8},"Sam LaPorta":{"rec":70.1,"recY":809.4,"recTD":5.5,"fl":0.2},"Dallas Goedert":{"rec":65.5,"recY":689.2,"recTD":7.6,"fl":0.2},"Tucker Kraft":{"rec":60.2,"recY":770.7,"recTD":6.4,"fl":0.2},"Travis Kelce":{"rec":74.9,"recY":784.5,"recTD":4.8,"fl":0.3},"Brandon Aubrey":{"fg":35.2,"xp":47.5},"Jason Myers":{"fg":34.7,"xp":46.3},"Ka'imi Fairbairn":{"fg":36.3,"xp":35.6},"Cameron Dicker":{"fg":34.7,"xp":40.2},"Harrison Mevis":{"fg":27.3,"xp":54.9},"Jake Bates":{"fg":28.3,"xp":51.1},"Blake Grupe":{"fg":30.2,"xp":42.9},"Chase McLaughlin":{"fg":31.5,"xp":38.4},"Cairo Santos":{"fg":30.0,"xp":42.9},"Eddy Pineiro":{"fg":31.0,"xp":39.5}};
 var state={budget:350,teams:[],picks:[],selected:null,filter:'ALL',query:''};
 try{var saved=localStorage.getItem('ffdc-v09')||localStorage.getItem('ffdc-v08')||localStorage.getItem('ffdc-v07')||localStorage.getItem('ffdc-v06')||localStorage.getItem('ffdc-v05');if(saved){var parsed=JSON.parse(saved);if(parsed&&parsed.teams)state=parsed;}}catch(e){}
-if(!state.teams||state.teams.length!==10){state.teams=[];for(var t=0;t<10;t++)state.teams.push({id:t,name:t===0?'My Team':'Team '+(t+1),budget:350,players:[]});}
+if(!state.teams||state.teams.length<2){state.teams=[];for(var t=0;t<10;t++)state.teams.push({id:t,name:t===0?'My Team':'Team '+(t+1),budget:350,players:[]});}
 function saveState(){try{var c=JSON.parse(JSON.stringify(state));c.selected=null;c.query='';localStorage.setItem('ffdc-v10',JSON.stringify(c));}catch(e){}}
 function canFill(slot,pos){return slot===pos || (slot==='FLEX' && (pos==='RB'||pos==='WR'||pos==='TE'));}
 function assignment(team){var slots=rosterTemplate.map(function(x){return{x:x,filled:null}}); team.players.forEach(function(p){var idx=-1; for(var i=0;i<slots.length;i++){if(!slots[i].filled && slots[i].x===p.pos){idx=i;break}} if(idx<0 && (p.pos==='RB'||p.pos==='WR'||p.pos==='TE')){for(var j=0;j<slots.length;j++){if(!slots[j].filled&&slots[j].x==='FLEX'){idx=j;break}}} if(idx>=0)slots[idx].filled=p;});return slots;}
@@ -876,6 +895,112 @@ if ('serviceWorker' in navigator) {
     const obs=new MutationObserver(()=>refresh());
     ['weeklyHistory','seasonTeamCards'].forEach(id=>{const e=document.getElementById(id);if(e)obs.observe(e,{childList:true});});
   });
+})();
+</script>
+
+
+<script id="league-team-manager-js">
+(function(){
+  const MIN_TEAMS=2, MAX_TEAMS=10;
+
+  function getState(){
+    try{ if(typeof state!=='undefined' && state) return state; }catch(e){}
+    return window.state||null;
+  }
+  function getTeams(){
+    const s=getState();
+    return s&&Array.isArray(s.teams)?s.teams:[];
+  }
+  function baseBudget(){
+    const s=getState();
+    return Number(s?.budget||350);
+  }
+  function saveCore(){
+    try{
+      if(typeof saveState==='function'){ saveState(); return; }
+    }catch(e){}
+    try{
+      if(typeof window.saveState==='function'){ window.saveState(); return; }
+    }catch(e){}
+    try{
+      const s=getState(); if(s) localStorage.setItem('ffdc-v10',JSON.stringify(s));
+    }catch(e){}
+  }
+  function reindexPicksAfterDelete(idx){
+    const s=getState(); if(!s||!Array.isArray(s.picks))return;
+    for(let i=s.picks.length-1;i>=0;i--){
+      const pk=s.picks[i];
+      const ti=(typeof pk.teamIndex==='number')?pk.teamIndex:(typeof pk.team==='number'?pk.team:null);
+      if(ti===idx){ s.picks.splice(i,1); }
+      else if(ti!==null && ti>idx){
+        if(typeof pk.teamIndex==='number')pk.teamIndex--;
+        if(typeof pk.team==='number')pk.team--;
+      }
+    }
+  }
+  function makeTeam(i){
+    return {id:i,name:'Team '+(i+1),budget:baseBudget(),players:[]};
+  }
+  function render(){
+    const list=document.getElementById('leagueTeamsList'); if(!list)return;
+    const teams=getTeams();
+    list.innerHTML=teams.map((t,i)=>`
+      <div class="leagueTeamRow">
+        <div class="leagueTeamNum">T${i+1}</div>
+        <input class="leagueTeamInput" data-index="${i}" value="${String(t.name||('Team '+(i+1))).replace(/"/g,'&quot;')}" maxlength="28">
+        <button class="removeTeamBtn" data-remove="${i}" aria-label="Remove team">×</button>
+      </div>`).join('');
+    list.querySelectorAll('.removeTeamBtn').forEach(b=>b.onclick=()=>{
+      const idx=Number(b.dataset.remove), teams=getTeams();
+      if(teams.length<=MIN_TEAMS){ alert('The league needs at least 2 teams.'); return; }
+      const nm=teams[idx]?.name||('Team '+(idx+1));
+      if(!confirm('Remove '+nm+' from the league? Any draft picks assigned to that team will be returned to the player pool.'))return;
+      reindexPicksAfterDelete(idx);
+      teams.splice(idx,1);
+      teams.forEach((t,i)=>{ if(typeof t.id==='number')t.id=i; if(typeof t.index==='number')t.index=i; });
+      document.dispatchEvent(new CustomEvent('fdcc-team-deleted',{detail:idx}));
+      saveCore(); render(); refreshEverything();
+    });
+    document.getElementById('leagueTeamsStatus').textContent=`${teams.length} active team${teams.length===1?'':'s'} · minimum ${MIN_TEAMS} · maximum ${MAX_TEAMS}`;
+  }
+  function saveNames(){
+    const teams=getTeams();
+    document.querySelectorAll('.leagueTeamInput').forEach(inp=>{
+      const i=Number(inp.dataset.index);
+      if(teams[i]) teams[i].name=(inp.value||'').trim()||('Team '+(i+1));
+    });
+    saveCore();
+    refreshEverything();
+    render();
+    const b=document.getElementById('saveTeamsBtn'); if(b){const old=b.textContent;b.textContent='SAVED ✓';setTimeout(()=>b.textContent=old,1000)}
+  }
+  function addTeam(){
+    const teams=getTeams();
+    if(teams.length>=MAX_TEAMS){ alert('This app currently supports up to 10 teams.'); return; }
+    teams.push(makeTeam(teams.length));
+    saveCore(); render(); refreshEverything();
+  }
+  function refreshEverything(){
+    const fns=['render','renderAll','renderTeams','renderTeamBoard','renderDraft','updateUI','recalculate','recalc'];
+    for(const fn of fns){
+      try{
+        if(typeof window[fn]==='function')window[fn]();
+        else if(typeof eval(fn)==='function')eval(fn)();
+      }catch(e){}
+    }
+    try{
+      document.querySelectorAll('.tab').forEach(t=>{
+        if(t.classList.contains('active'))t.click();
+      });
+    }catch(e){}
+  }
+  function init(){
+    render();
+    document.getElementById('addTeamBtn')?.addEventListener('click',addTeam);
+    document.getElementById('saveTeamsBtn')?.addEventListener('click',saveNames);
+    document.querySelector('.tab[data-tab="settings"]')?.addEventListener('click',()=>setTimeout(render,0));
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
 })();
 </script>
 
