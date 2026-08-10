@@ -1060,13 +1060,13 @@ if ('serviceWorker' in navigator) {
       <div class="muted" style="margin-bottom:10px">Rename or remove teams here. Changes save directly to the live league.</div>
       <div id="v112TeamRows">${ts.map((t,i)=>`<div class="leagueTeamRow"><div class="leagueTeamNum">T${i+1}</div><input class="leagueTeamInput" data-v112-index="${i}" value="${String(t.name||('Team '+(i+1))).replace(/&/g,'&amp;').replace(/\"/g,'&quot;')}" maxlength="28"><button type="button" class="removeTeamBtn" data-v112-remove="${i}">×</button></div>`).join('')}</div>
       <div class="two" style="margin-top:10px"><button type="button" id="v112Add" class="primary" style="margin-top:0">ADD TEAM</button><button type="button" id="v112Save" class="secondary" style="margin-top:0">SAVE CHANGES</button></div>
-      <div id="v112Status" class="muted" style="margin-top:8px">${ts.length} active teams · min 2 · max 10 · Build v1.14</div>`;
+      <div id="v112Status" class="muted" style="margin-top:8px">${ts.length} active teams · min 2 · max 10 · Build v1.15</div>`;
   }
   function saveNames(){
     const a=app(); if(!a)return;
     document.querySelectorAll('[data-v112-index]').forEach(inp=>{ const i=Number(inp.dataset.v112Index); if(a.state.teams[i]) a.state.teams[i].name=(inp.value||'').trim()||('Team '+(i+1)); });
     persist();
-    const st=document.getElementById('v112Status'); if(st)st.textContent='Saved ✓ · '+a.state.teams.length+' active teams · Build v1.14';
+    const st=document.getElementById('v112Status'); if(st)st.textContent='Saved ✓ · '+a.state.teams.length+' active teams · Build v1.15';
     try{ if(typeof a.render==='function')a.render(); }catch(e){}
     setTimeout(renderManager,50);
   }
@@ -1083,40 +1083,35 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
-<script id="team-manager-v114-patch">
+<script id="v115-add-team-refresh">
 (function(){
-  function getState(){
+  function getStateRef(){
     try{ if(typeof state!=='undefined' && state) return state; }catch(e){}
     return window.state||null;
   }
-  function getTeams(){
-    const s=getState();
-    return s&&Array.isArray(s.teams)?s.teams:[];
-  }
-  function renderEditorNow(){
+  function renderVisibleTeamManager(){
+    const s=getStateRef();
     const list=document.getElementById('leagueTeamsList');
-    if(!list)return;
-    const teams=getTeams();
-    list.innerHTML=teams.map((t,i)=>`
+    if(!s || !Array.isArray(s.teams) || !list) return;
+    list.innerHTML=s.teams.map((t,i)=>`
       <div class="leagueTeamRow">
         <div class="leagueTeamNum">T${i+1}</div>
         <input class="leagueTeamInput" data-index="${i}" value="${String(t.name||('Team '+(i+1))).replace(/"/g,'&quot;')}" maxlength="28">
         <button class="removeTeamBtn" data-remove="${i}" aria-label="Remove team">×</button>
       </div>`).join('');
     const st=document.getElementById('leagueTeamsStatus');
-    if(st)st.textContent=`Saved ✓ · ${teams.length} active teams · Build v1.14`;
+    if(st) st.textContent=`Saved ✓ · ${s.teams.length} active teams · Build v1.15`;
   }
-  function refreshSoon(){ setTimeout(renderEditorNow,0); setTimeout(renderEditorNow,50); }
-
-  document.addEventListener('click',function(e){
+  function refreshAfterControl(e){
     if(e.target.closest('#addTeamBtn') || e.target.closest('.removeTeamBtn') || e.target.closest('#saveTeamsBtn')){
-      refreshSoon();
+      setTimeout(renderVisibleTeamManager,25);
+      setTimeout(renderVisibleTeamManager,120);
     }
-  }, true);
-
-  document.addEventListener('DOMContentLoaded',refreshSoon);
-  const settingsTab=document.querySelector('.tab[data-tab="settings"]');
-  if(settingsTab)settingsTab.addEventListener('click',refreshSoon);
+  }
+  document.addEventListener('click',refreshAfterControl,true);
+  document.addEventListener('DOMContentLoaded',()=>setTimeout(renderVisibleTeamManager,50));
+  const st=document.querySelector('.tab[data-tab="settings"]');
+  if(st) st.addEventListener('click',()=>setTimeout(renderVisibleTeamManager,50));
 })();
 </script>
 
