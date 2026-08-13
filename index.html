@@ -509,11 +509,31 @@ function auctionAssistantAnswer(q){
   return 'Try asking: <b>“Which RB should I target next?”</b>, <b>“Can I wait on WR?”</b>, <b>“Who should I nominate?”</b>, or <b>“How much should I pay for [player]?”</b>';
 }
 function wireAuctionAssistant(){
-  var input=document.getElementById('aiQuestion'),btn=document.getElementById('aiAskBtn'),ans=document.getElementById('aiAnswer');
-  function ask(q){if(q!=null)input.value=q;ans.innerHTML=auctionAssistantAnswer(input.value)}
-  if(btn)btn.onclick=function(){ask()};
-  if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ask()}});
-  document.querySelectorAll('[data-aiq]').forEach(function(b){b.onclick=function(){ask(b.getAttribute('data-aiq'))}});
+  if(window.__auctionAssistantWired)return;
+  window.__auctionAssistantWired=true;
+  document.addEventListener('click',function(e){
+    var quick=e.target.closest('[data-aiq]');
+    if(quick){
+      e.preventDefault();
+      var input=document.getElementById('aiQuestion'),ans=document.getElementById('aiAnswer');
+      if(input)input.value=quick.getAttribute('data-aiq')||'';
+      if(ans){try{ans.innerHTML=auctionAssistantAnswer(input?input.value:'');}catch(err){console.error(err);ans.innerHTML='<b>Assistant error:</b> '+esc(err.message||String(err));}}
+      return;
+    }
+    var ask=e.target.closest('#aiAskBtn');
+    if(ask){
+      e.preventDefault();
+      var input2=document.getElementById('aiQuestion'),ans2=document.getElementById('aiAnswer');
+      if(ans2){try{ans2.innerHTML=auctionAssistantAnswer(input2?input2.value:'');}catch(err){console.error(err);ans2.innerHTML='<b>Assistant error:</b> '+esc(err.message||String(err));}}
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&e.target&&e.target.id==='aiQuestion'){
+      e.preventDefault();
+      var ans=document.getElementById('aiAnswer');
+      if(ans){try{ans.innerHTML=auctionAssistantAnswer(e.target.value||'');}catch(err){console.error(err);ans.innerHTML='<b>Assistant error:</b> '+esc(err.message||String(err));}}
+    }
+  });
 }
 
 
@@ -774,7 +794,7 @@ render();
         if(btn){btn.click();success=true}
       }catch(e){}
     }
-    if(success){liveSelected=null; const b=document.getElementById('liveBid'); if(b)b.value=''; setTimeout(()=>{renderAll();wireAuctionAssistant();},20);}
+    if(success){liveSelected=null; const b=document.getElementById('liveBid'); if(b)b.value=''; setTimeout(()=>{renderAll();},20);}
   }
   function undoLive(){
     const btn=[...document.querySelectorAll('button')].find(b=>/undo last|undo/i.test(b.textContent)&&b.id!=='liveUndoBtn');
@@ -1460,4 +1480,11 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
+<script>
+(function(){
+  function startAssistant(){ try{ wireAuctionAssistant(); }catch(e){ console.error('Auction Assistant wiring error',e); } }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',startAssistant);
+  else startAssistant();
+})();
+</script>
 </body></html>
