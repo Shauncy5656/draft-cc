@@ -6,7 +6,30 @@
 <title>Fantasy Draft Command Center v1.13</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#07111f;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.app{max-width:540px;margin:0 auto;padding:18px 12px 52px}.eyebrow{font-size:11px;color:#38bdf8;font-weight:900;letter-spacing:1.4px}.title{font-size:24px;font-weight:900;margin:4px 0 14px}.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;background:#0d1b2d;border-radius:14px;padding:5px;margin-bottom:14px;position:sticky;top:0;z-index:5}.tab{background:#13243a;color:#91a3ba;border:0;border-radius:10px;padding:10px 2px;font-weight:800}.tab.active{background:#1c3a5f;color:#fff}.view{display:none}.view.active{display:block}.hero,.card{background:#0d1b2d;border:1px solid #1b304c;border-radius:18px;padding:16px;margin-bottom:16px}.hero{background:#102642;border-color:#23527f}.label{font-size:11px;color:#38bdf8;font-weight:900;letter-spacing:1.1px}.money{font-size:44px;font-weight:900;line-height:1.05;margin-top:4px}.muted{color:#8ea0b8;font-size:12px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.metric{background:#0a1a2e;border-radius:12px;padding:10px}.metric b{display:block;font-size:16px}.metric span{display:block;color:#71849d;font-size:9px;font-weight:800;margin-top:3px}.section{font-size:18px;font-weight:900;margin:18px 2px 10px}.search,.bid,.select,.nameInput{width:100%;background:#081421;color:#fff;border:1px solid #1b324f;border-radius:12px;padding:12px}.filters{display:flex;gap:6px;overflow:auto;padding:10px 0}.chip{border:1px solid #1e3654;background:#13243a;color:#a4b4c8;border-radius:999px;padding:8px 11px;font-weight:800;font-size:11px;white-space:nowrap}.chip.active{background:#0ea5e9;color:#03131f;border-color:#38bdf8}.player{display:flex;align-items:center;gap:10px;padding:11px 6px;border-bottom:1px solid #13243a}.player.selected{background:#102b48;border-radius:12px}.pos{width:38px;height:38px;border-radius:10px;background:#18304f;color:#6dd2ff;display:grid;place-items:center;font-weight:900;font-size:11px}.pinfo{flex:1;min-width:0}.pname{font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.value{color:#4ade80;font-weight:900}.draftbox{background:#10213a;border:1px solid #26496f;border-radius:15px;padding:14px;margin-top:14px}.field{font-size:10px;color:#71849d;font-weight:900;letter-spacing:1px;margin:12px 0 7px}.teamsGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.teamBtn{border:1px solid #1e3654;background:#13243a;color:#a4b4c8;border-radius:10px;padding:9px 7px;font-size:11px;font-weight:800}.teamBtn.active{background:#183f67;color:#fff}.bid{font-size:24px;font-weight:900}.primary,.secondary,.danger{width:100%;margin-top:12px;border:0;padding:14px;border-radius:12px;font-weight:900}.primary{background:#38bdf8;color:#022033}.secondary{background:#19314e;color:#cce8ff}.danger{background:#3a1820;color:#ffb4c0}.recent,.teamrow,.target{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #13243a}.num{width:28px;color:#657a94;font-weight:900}.price{color:#4ade80;font-weight:900}.note{background:#101f35;border:1px solid #1d3f63;border-radius:14px;padding:13px;color:#9bb0c6;font-size:12px}.note b{color:#38bdf8}.status{display:inline-block;margin-top:10px;padding:6px 9px;border-radius:999px;background:#11311f;color:#74e39b;font-size:10px;font-weight:900}.recommend{background:#0d2438;border:1px solid #176a77;border-radius:16px;padding:14px;margin-bottom:12px}.recommend .big{font-size:22px;font-weight:900}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#173452;color:#aad8ff;font-size:10px;font-weight:900;margin:5px 4px 0 0}.positive{color:#4ade80}.warn{color:#facc15}.negative{color:#fb7185}.teamcard{background:#0c192b;border:1px solid #1c314d;border-radius:16px;padding:13px;margin-bottom:10px}.teamhead{display:flex;justify-content:space-between;gap:8px}.teamname{font-weight:900}.rosterchips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.slot{font-size:9px;padding:4px 6px;border-radius:7px;background:#122944;color:#a4b4c8}.slot.filled{background:#153826;color:#8bf0ab}.bar{height:8px;background:#0a1422;border-radius:99px;overflow:hidden;margin-top:8px}.bar>div{height:100%;background:#38bdf8}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tiny{font-size:10px;color:#71849d}.right{text-align:right}.rank{font-size:11px;color:#71849d;width:24px}.targetScore{font-size:12px;font-weight:900;color:#38bdf8}.divider{height:1px;background:#1a304b;margin:12px 0}.settingsRow{margin-bottom:12px}.settingsRow label{display:block;font-size:11px;color:#91a3ba;margin-bottom:5px;font-weight:800}.intelGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.intelBox{background:#0a1a2e;border:1px solid #183452;border-radius:13px;padding:11px}.intelBox b{display:block;font-size:15px;margin-top:3px}.signal{font-size:11px;font-weight:900;letter-spacing:.5px}.run{color:#facc15}.go{color:#4ade80}.hold{color:#7dd3fc}.nom{color:#c4b5fd}.positionRow{display:grid;grid-template-columns:42px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #13243a}.meter{height:6px;background:#0a1422;border-radius:99px;overflow:hidden;margin-top:5px}.meter>div{height:100%;background:#38bdf8}.decision{font-size:22px;font-weight:900;margin:3px 0}.subtle{font-size:11px;color:#70869f}.threat{display:flex;gap:9px;align-items:center;padding:10px 0;border-bottom:1px solid #13243a}.threat:last-child{border-bottom:0}.threatScore{min-width:46px;text-align:right;font-weight:900;color:#facc15}.dangerTag{display:inline-block;padding:4px 7px;border-radius:999px;background:#3a2511;color:#fde68a;font-size:9px;font-weight:900}.safeTag{display:inline-block;padding:4px 7px;border-radius:999px;background:#11311f;color:#86efac;font-size:9px;font-weight:900}
-.warGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.warBox{background:#101c2c;border:1px solid #29415f;border-radius:13px;padding:11px}.warBox b{display:block;font-size:16px;margin-top:3px}.control{font-size:24px;font-weight:900;margin:4px 0}.dominant{color:#4ade80}.leverage{color:#7dd3fc}.even{color:#facc15}.defensive{color:#fb7185}.attack{padding:11px 0;border-bottom:1px solid #13243a}.attack:last-child{border-bottom:0}.attackTitle{font-weight:900;font-size:14px}.badge{display:inline-block;padding:4px 7px;border-radius:999px;background:#172d48;color:#aad8ff;font-size:9px;font-weight:900;margin-left:5px}.endgameGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.endgameBox{background:#0d2137;border:1px solid #245078;border-radius:13px;padding:11px}.endgameBox b{display:block;font-size:16px;margin-top:3px}.phase{font-size:24px;font-weight:900;margin:4px 0}.early{color:#7dd3fc}.middle{color:#c4b5fd}.late{color:#facc15}.closing{color:#4ade80}.actionLine{background:#0a1a2e;border-left:3px solid #38bdf8;border-radius:10px;padding:10px 11px;margin-top:9px;font-size:12px}.marketRow{display:grid;grid-template-columns:42px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #13243a}.controlTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#11311f;color:#86efac}.riskTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#3a2511;color:#fde68a}</style>
+.warGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.warBox{background:#101c2c;border:1px solid #29415f;border-radius:13px;padding:11px}.warBox b{display:block;font-size:16px;margin-top:3px}.control{font-size:24px;font-weight:900;margin:4px 0}.dominant{color:#4ade80}.leverage{color:#7dd3fc}.even{color:#facc15}.defensive{color:#fb7185}.attack{padding:11px 0;border-bottom:1px solid #13243a}.attack:last-child{border-bottom:0}.attackTitle{font-weight:900;font-size:14px}.badge{display:inline-block;padding:4px 7px;border-radius:999px;background:#172d48;color:#aad8ff;font-size:9px;font-weight:900;margin-left:5px}.endgameGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.endgameBox{background:#0d2137;border:1px solid #245078;border-radius:13px;padding:11px}.endgameBox b{display:block;font-size:16px;margin-top:3px}.phase{font-size:24px;font-weight:900;margin:4px 0}.early{color:#7dd3fc}.middle{color:#c4b5fd}.late{color:#facc15}.closing{color:#4ade80}.actionLine{background:#0a1a2e;border-left:3px solid #38bdf8;border-radius:10px;padding:10px 11px;margin-top:9px;font-size:12px}.marketRow{display:grid;grid-template-columns:42px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid #13243a}.controlTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#11311f;color:#86efac}.riskTag{font-size:9px;font-weight:900;padding:4px 7px;border-radius:999px;background:#3a2511;color:#fde68a}.strategyBox{background:#001d3a;border:2px solid #69BE28;border-radius:18px;padding:15px;margin-bottom:12px}
+.strategyBox.nominate{border-color:#c4b5fd}.strategyBox.buy{border-color:#69BE28}
+.strategyTitle{font-size:10px;font-weight:1000;letter-spacing:1.2px;color:#A5ACAF}
+.strategyName{font-size:25px;font-weight:1000;margin-top:3px}
+.strategyWhy{font-size:11px;color:#c7d1d8;line-height:1.4;margin-top:5px}
+.strategyPills{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.strategyPill{padding:5px 8px;border-radius:999px;background:#06315a;color:#d8dde0;font-size:9px;font-weight:1000}
+.protectLine{margin-top:10px;padding:9px 10px;border-radius:10px;background:#102b48;border-left:3px solid #facc15;font-size:11px}
+
+.aiBox{background:#001d3a;border:2px solid #7dd3fc;border-radius:18px;padding:15px;margin-bottom:14px}
+.aiHead{display:flex;justify-content:space-between;gap:8px;align-items:center}.aiTitle{font-size:14px;font-weight:1000}.aiBadge{font-size:8px;font-weight:1000;padding:4px 7px;border-radius:999px;background:#0b3c66;color:#bde8ff}
+.aiInputRow{display:grid;grid-template-columns:1fr 76px;gap:7px;margin-top:10px}.aiInput{width:100%;background:#00172e;color:white;border:1px solid #4b7188;border-radius:12px;padding:12px;font-size:14px}.aiAsk{border:0;border-radius:12px;background:#7dd3fc;color:#001a33;font-weight:1000}
+.aiQuick{display:flex;gap:5px;overflow:auto;margin-top:8px}.aiQuickBtn{white-space:nowrap;border:1px solid #365a73;background:#06315a;color:#d8dde0;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900}
+.aiAnswer{margin-top:11px;background:#00172e;border-left:3px solid #69BE28;border-radius:10px;padding:11px;font-size:12px;line-height:1.45;color:#d8dde0}.aiAnswer b{color:#fff}.aiAnswer .good{color:#8bf0ab}.aiAnswer .warn{color:#fde68a}.aiAnswer .bad{color:#ffb4c0}
+
+
+.gmBox{background:#00172e;border:2px solid #69BE28;border-radius:18px;padding:15px;margin-bottom:14px}
+.gmTitle{font-size:15px;font-weight:1000}.gmSub{font-size:10px;color:#A5ACAF;margin-top:4px;line-height:1.4}
+.gmGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.gmMetric{background:#001d3a;border:1px solid #365a73;border-radius:11px;padding:9px}.gmMetric span{display:block;font-size:8px;color:#A5ACAF;font-weight:900}.gmMetric b{display:block;font-size:15px;margin-top:3px}
+.threatList{margin-top:9px}.threatRow2{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #164164}.threatRow2:last-child{border-bottom:0}
+.threatTeam{font-size:12px;font-weight:1000}.threatMeta{font-size:9px;color:#A5ACAF;margin-top:2px}.threatProb{font-size:14px;font-weight:1000}
+.probHigh{color:#fb7185}.probMed{color:#facc15}.probLow{color:#4ade80}
+
+</style>
 <style id="live-mode-style">
 .liveHero{display:flex;justify-content:space-between;align-items:flex-end;background:linear-gradient(145deg,#00305f,#002244);border:1px solid #69BE28;border-radius:18px;padding:16px;margin-bottom:12px}
 .liveTitle{font-size:28px;font-weight:950;line-height:1}.liveBudget{text-align:right}.liveBudget span{display:block;font-size:9px;color:#A5ACAF;font-weight:900;letter-spacing:1px}.liveBudget b{font-size:28px;color:#69BE28}
@@ -102,9 +125,37 @@ body{background:var(--deep)!important}.eyebrow,.label,.targetScore,.note b{color
     </div>
 
     <div class="section">Command Center</div>
-    <div class="recommend"><div class="label">BEST TARGET RIGHT NOW</div><div class="big" id="bestTarget">Ja'Marr Chase</div><div class="muted" id="bestWhy">Elite projection + strong value relative to room inflation.</div><span class="pill" id="bestPos">WR</span><span class="pill" id="bestPrice">Target ≤ $57</span><span class="pill" id="inflationPill">Market 0%</span></div>
-    <div class="card"><div class="label">TOP 3 VALUES REMAINING</div><div id="topTargets"></div></div>
-    <div class="card"><div class="label">DRAFT ROOM INTELLIGENCE · v1.0</div><div class="decision" id="roomDecision">WAIT</div><div class="muted" id="roomReason">The room has not developed enough yet. Stay disciplined and let value come to you.</div><div class="intelGrid" style="margin-top:12px"><div class="intelBox"><div class="tiny">HOT POSITION</div><b id="hotPosition">—</b><div class="subtle" id="runDetail">No positional run yet</div></div><div class="intelBox"><div class="tiny">NOMINATE NEXT</div><b id="nominatePlayer">—</b><div class="subtle" id="nominateWhy">Build the room first</div></div><div class="intelBox"><div class="tiny">STARTER SUPPLY</div><b id="starterSupply">—</b><div class="subtle" id="supplyDetail">Tracks quality remaining</div></div><div class="intelBox"><div class="tiny">OPPONENT PRESSURE</div><b id="oppPressure">—</b><div class="subtle" id="pressureDetail">Teams still needing target position</div></div></div><div class="divider"></div><div id="positionIntel"></div><div class="divider"></div><div class="label">TIER + CLIFF WATCH</div><div id="tierWatch" style="margin-top:10px"></div><div class="divider"></div><div class="label">OPPONENT MODELING</div><div class="muted" id="opponentSummary" style="margin-top:6px">Select a target to see who can challenge you.</div><div id="opponentModel" style="margin-top:8px"></div><div class="divider"></div><div class="label">BUDGET WARFARE</div><div class="control" id="roomControl">EVEN</div><div class="muted" id="controlReason">Budget leverage will develop as the room spends.</div><div class="warGrid" style="margin-top:12px"><div class="warBox"><div class="tiny">BIGGEST RIVAL</div><b id="biggestRival">—</b><div class="subtle" id="rivalWhy">Tracks overlapping needs</div></div><div class="warBox"><div class="tiny">MAX-BID ADVANTAGE</div><b id="maxBidEdge">—</b><div class="subtle" id="edgeWhy">Teams you can outbid</div></div><div class="warBox"><div class="tiny">CASH-POOR TEAMS</div><b id="cashPoor">0</b><div class="subtle" id="cashPoorWhy">Opponents losing flexibility</div></div><div class="warBox"><div class="tiny">ATTACK NOMINATION</div><b id="attackNom">—</b><div class="subtle" id="attackWhy">Drain a dangerous opponent</div></div></div><div class="divider"></div><div class="label">WHO TO ATTACK</div><div id="budgetTargets" style="margin-top:7px"></div><div class="divider"></div><div class="label">ENDGAME MANAGER</div><div class="phase" id="endgamePhase">EARLY BUILD</div><div class="muted" id="endgameReason">The auction is still broad. Keep building value and avoid locking into endgame assumptions too early.</div><div class="endgameGrid" style="margin-top:12px"><div class="endgameBox"><div class="tiny">CASH TO RESERVE</div><b id="reserveCash">$11</b><div class="subtle" id="reserveWhy">Minimum money to finish</div></div><div class="endgameBox"><div class="tiny">SPENDABLE NOW</div><b id="spendableNow">$339</b><div class="subtle" id="spendWhy">Above roster-closing reserve</div></div><div class="endgameBox"><div class="tiny">MARKETS YOU CONTROL</div><b id="marketsControl">0</b><div class="subtle" id="marketsWhy">Positions where your max bid leads</div></div><div class="endgameBox"><div class="tiny">FINAL SLOT PLAN</div><b id="finalSlotPlan">Stay flexible</b><div class="subtle" id="finalSlotWhy">Best use of remaining cash</div></div></div><div class="actionLine" id="endgameAction">Keep hunting value while the room still has broad flexibility.</div><div class="divider"></div><div class="label">POSITION CONTROL</div><div id="marketControl" style="margin-top:7px"></div></div>
+    <div class="strategyBox nominate"><div class="strategyTitle">NOMINATE NOW · MAKE THE ROOM SPEND</div><div class="strategyName" id="bestTarget">—</div><div class="strategyWhy" id="bestWhy">Looking for the best budget-drain nomination.</div><div class="strategyPills"><span class="strategyPill" id="bestPos">—</span><span class="strategyPill" id="bestPrice">Drain target</span><span class="strategyPill" id="inflationPill">Room read</span></div><div class="protectLine" id="protectLine">Protection check: your roster has enough depth to stay flexible.</div></div>
+    <div class="strategyBox buy"><div class="strategyTitle">SPEND ON · BEST PROJECTED PRODUCTION FOR YOUR MONEY</div><div class="strategyName" id="buyTarget">—</div><div class="strategyWhy" id="buyWhy">Looking for high projected production without the star-price tax.</div><div class="strategyPills"><span class="strategyPill" id="buyPos">—</span><span class="strategyPill" id="buyCap">Max spend —</span><span class="strategyPill" id="buyEdge">Projection edge —</span></div></div>
+    <div class="card"><div class="label">TOP 3 BUY TARGETS</div><div id="topTargets"></div></div>
+    <div class="aiBox">
+      <div class="aiHead"><div><div class="label">AUCTION ASSISTANT</div><div class="aiTitle">Ask the room</div></div><div class="aiBadge">LIVE DRAFT LOGIC</div></div>
+      <div class="muted" style="margin-top:5px">Ask about targets, nominations, waiting, positional runs, or how much you should spend.</div>
+      <div class="aiInputRow"><input id="aiQuestion" class="aiInput" placeholder="e.g. Which RB should I target next?"><button id="aiAskBtn" class="aiAsk">ASK</button></div>
+      <div class="aiQuick">
+        <button class="aiQuickBtn" data-aiq="Who should I nominate now?">Nominate</button>
+        <button class="aiQuickBtn" data-aiq="Which RB should I target next?">RB target</button>
+        <button class="aiQuickBtn" data-aiq="Which WR should I target next?">WR target</button>
+        <button class="aiQuickBtn" data-aiq="Can I wait on QB?">Wait on QB?</button>
+        <button class="aiQuickBtn" data-aiq="Which position can I wait on?">What can wait?</button>
+      </div>
+      <div id="aiAnswer" class="aiAnswer">Ask me a draft-room question and I’ll answer from the live auction state.</div>
+    </div>
+    <div class="gmBox">
+      <div class="label">AUCTION GM MODE</div>
+      <div class="gmTitle" id="gmHeadline">Building the strongest full roster — not just finding cheap players.</div>
+      <div class="gmSub" id="gmSummary">Tracks projected team strength, budget flexibility, and opponent bidding pressure.</div>
+      <div class="gmGrid">
+        <div class="gmMetric"><span>PROJECTED STARTER STRENGTH</span><b id="gmTeamStrength">—</b></div>
+        <div class="gmMetric"><span>SPENDABLE ABOVE RESERVE</span><b id="gmSpendable">—</b></div>
+        <div class="gmMetric"><span>BEST BUY NOW</span><b id="gmBestBuy">—</b></div>
+        <div class="gmMetric"><span>OUTBID RISK</span><b id="gmOutbidRisk">—</b></div>
+      </div>
+      <div class="divider"></div>
+      <div class="label">WHO MAY FIGHT YOU</div>
+      <div id="gmThreatList" class="threatList"></div>
+    </div>
+    <div class="card"><div class="label">DRAFT ROOM INTELLIGENCE · v1.0</div><div class="decision" id="roomDecision">WAIT</div><div class="muted" id="roomReason">The room has not developed enough yet. Stay disciplined and let value come to you.</div><div class="intelGrid" style="margin-top:12px"><div class="intelBox"><div class="tiny">HOT POSITION</div><b id="hotPosition">—</b><div class="subtle" id="runDetail">No positional run yet</div></div><div class="intelBox"><div class="tiny">PROTECT NEXT</div><b id="nominatePlayer">—</b><div class="subtle" id="nominateWhy">Tracks the position you cannot wait too long on</div></div><div class="intelBox"><div class="tiny">STARTER SUPPLY</div><b id="starterSupply">—</b><div class="subtle" id="supplyDetail">Tracks quality remaining</div></div><div class="intelBox"><div class="tiny">OPPONENT PRESSURE</div><b id="oppPressure">—</b><div class="subtle" id="pressureDetail">Teams still needing target position</div></div></div><div class="divider"></div><div id="positionIntel"></div><div class="divider"></div><div class="label">TIER + CLIFF WATCH</div><div id="tierWatch" style="margin-top:10px"></div><div class="divider"></div><div class="label">OPPONENT MODELING</div><div class="muted" id="opponentSummary" style="margin-top:6px">Select a target to see who can challenge you.</div><div id="opponentModel" style="margin-top:8px"></div><div class="divider"></div><div class="label">BUDGET WARFARE</div><div class="control" id="roomControl">EVEN</div><div class="muted" id="controlReason">Budget leverage will develop as the room spends.</div><div class="warGrid" style="margin-top:12px"><div class="warBox"><div class="tiny">BIGGEST RIVAL</div><b id="biggestRival">—</b><div class="subtle" id="rivalWhy">Tracks overlapping needs</div></div><div class="warBox"><div class="tiny">MAX-BID ADVANTAGE</div><b id="maxBidEdge">—</b><div class="subtle" id="edgeWhy">Teams you can outbid</div></div><div class="warBox"><div class="tiny">CASH-POOR TEAMS</div><b id="cashPoor">0</b><div class="subtle" id="cashPoorWhy">Opponents losing flexibility</div></div><div class="warBox"><div class="tiny">ATTACK NOMINATION</div><b id="attackNom">—</b><div class="subtle" id="attackWhy">Drain a dangerous opponent</div></div></div><div class="divider"></div><div class="label">WHO TO ATTACK</div><div id="budgetTargets" style="margin-top:7px"></div><div class="divider"></div><div class="label">ENDGAME MANAGER</div><div class="phase" id="endgamePhase">EARLY BUILD</div><div class="muted" id="endgameReason">The auction is still broad. Keep building value and avoid locking into endgame assumptions too early.</div><div class="endgameGrid" style="margin-top:12px"><div class="endgameBox"><div class="tiny">CASH TO RESERVE</div><b id="reserveCash">$11</b><div class="subtle" id="reserveWhy">Minimum money to finish</div></div><div class="endgameBox"><div class="tiny">SPENDABLE NOW</div><b id="spendableNow">$339</b><div class="subtle" id="spendWhy">Above roster-closing reserve</div></div><div class="endgameBox"><div class="tiny">MARKETS YOU CONTROL</div><b id="marketsControl">0</b><div class="subtle" id="marketsWhy">Positions where your max bid leads</div></div><div class="endgameBox"><div class="tiny">FINAL SLOT PLAN</div><b id="finalSlotPlan">Stay flexible</b><div class="subtle" id="finalSlotWhy">Best use of remaining cash</div></div></div><div class="actionLine" id="endgameAction">Keep hunting value while the room still has broad flexibility.</div><div class="divider"></div><div class="label">POSITION CONTROL</div><div id="marketControl" style="margin-top:7px"></div></div>
 
     <div class="section">Draft a Player</div>
     <div class="card">
@@ -263,6 +314,97 @@ function waitRisk(p){var c=cliffInfo(p),opp=opponentsNeed(p.pos),run=recentRun()
 function urgency(p){var supply=starterSupply(p.pos),opp=opponentsNeed(p.pos),run=recentRun(),comp=comparableCount(p),wr=waitRisk(p),u=0;if(teamNeedsPos(state.teams[0],p.pos))u+=2;if(supply<=3)u+=4;else if(supply<=6)u+=2;if(opp>=6)u+=2;if(run.pos===p.pos&&run.count>=3)u+=2;if(comp<=2)u+=3;else if(comp>=7)u-=2;u+=wr.score;return{score:u,supply:supply,opp:opp,run:run,comp:comp,wait:wr}}
 function roomCall(p){if(!p)return{call:'WAIT',cls:'hold',reason:'No target available.'};var u=urgency(p),c=u.wait.cliff;if(u.wait.score>=6)return{call:'BUY NOW',cls:'go',reason:'Tier cliff danger: only '+c.toCliff+' player'+(c.toCliff===1?'':'s')+' remain in Tier '+c.tier+' from this point, and the next tier drops about '+Math.round(c.nextDrop*100)+'% in projected points.'};if(u.score>=8)return{call:'BUY NOW',cls:'go',reason:'Only '+u.supply+' starter-level '+p.pos+' options remain, '+u.opp+' opponents still need the position, and just '+u.comp+' comparable alternatives are left.'};if(u.score>=5)return{call:'LEAN BUY',cls:'go',reason:p.pos+' pressure is building. '+c.toCliff+' remain before the next tier cliff, while '+u.opp+' opponents still have a need.'};if(c.toCliff>=6&&u.comp>=7)return{call:'WAIT',cls:'hold',reason:'You can stay patient — '+c.toCliff+' players remain in this tier before a meaningful projection drop.'};return{call:'DISCIPLINE',cls:'hold',reason:'Target the player only at value. Tier '+c.tier+' still has '+c.toCliff+' options from this point; do not chase above '+money(targetPrice(p))+'.'}}
 function nominationTarget(){var av=available().filter(function(p){return p.pos!=='K'&&p.pos!=='DEF'});var best=null,bestN=-999;av.forEach(function(p){var myNeed=teamNeedsPos(state.teams[0],p.pos)?1:0,opp=opponentsNeed(p.pos),premium=Math.min(70,leagueValue(p))/10,sc=opp*2+premium-myNeed*5;if(sc>bestN){bestN=sc;best=p}});return best}
+
+function projectionReplacement(pos){
+  var list=posAvailable(pos).slice().sort(function(a,b){return customProj(b)-customProj(a)});
+  if(!list.length)return null;
+  var horizon=pos==='QB'?8:pos==='RB'?14:pos==='WR'?18:pos==='TE'?7:4;
+  return list[Math.min(list.length-1,horizon)]||list[list.length-1];
+}
+function projectionGain(p){
+  var r=projectionReplacement(p.pos);
+  return Math.max(0,customProj(p)-(r?customProj(r):0));
+}
+function projectionRetention(p){
+  var list=posAvailable(p.pos).slice().sort(function(a,b){return customProj(b)-customProj(a)});
+  var top=list[0]?customProj(list[0]):customProj(p);
+  return top?customProj(p)/top:1;
+}
+function starTax(p){
+  var rank=positionRank(p),comp=comparableCount(p),opp=opponentsNeed(p.pos);
+  var tax=0;
+  if(rank<=2)tax+=34;else if(rank<=4)tax+=22;else if(rank<=7)tax+=10;
+  if(comp<=2)tax+=12;
+  if(opp>=7)tax+=8;
+  return tax;
+}
+function liveDollarPerPoint(pos){
+  var same=state.picks.filter(function(x){return x.player&&x.player.pos===pos&&x.bid>1&&customProj(x.player)>0});
+  var sample=same.length>=2?same:state.picks.filter(function(x){return x.player&&x.bid>1&&customProj(x.player)>0&&x.player.pos!=='K'&&x.player.pos!=='DEF'});
+  if(!sample.length)return null;
+  var rates=sample.map(function(x){return x.bid/customProj(x.player)}).sort(function(a,b){return a-b});
+  return rates[Math.floor(rates.length/2)];
+}
+function projectionSpendCap(p){
+  var me=state.teams[0],legal=maxBid(me),reserve=minimumReserve(me),spendable=Math.max(0,me.budget-reserve);
+  var gain=projectionGain(p),ret=projectionRetention(p);
+  var pos=['QB','RB','WR','TE'];
+  var gains=pos.filter(function(x){return teamNeedsPos(me,x)}).map(function(x){
+    var a=posAvailable(x)[0];return a?projectionGain(a):0
+  });
+  var gainPool=Math.max(gain,gains.reduce(function(a,b){return a+b},0),1);
+  var share=Math.max(.05,Math.min(.55,gain/gainPool));
+  var cap=1+spendable*share;
+  var live=liveDollarPerPoint(p.pos);
+  if(live!==null){
+    var liveCap=customProj(p)*live;
+    cap=Math.min(cap,Math.max(2,liveCap*1.05));
+  }
+  if(!teamNeedsPos(me,p.pos))cap*=.78;
+  if(p.pos==='K'||p.pos==='DEF')cap=Math.min(cap,3);
+  return Math.max(1,Math.min(legal,Math.round(cap)));
+}
+function buyEfficiencyScore(p){
+  if(p.pos==='K'||p.pos==='DEF')return -9999;
+  var ret=projectionRetention(p),gain=projectionGain(p),need=teamNeedsPos(state.teams[0],p.pos)?18:0;
+  var depth=Math.min(18,comparableCount(p)*2);
+  return customProj(p)*.34 + gain*.85 + ret*70 + need + depth - starTax(p);
+}
+function buyTargets(){
+  return available().filter(function(p){return p.pos!=='K'&&p.pos!=='DEF'})
+    .slice().sort(function(a,b){return buyEfficiencyScore(b)-buyEfficiencyScore(a)}).slice(0,5);
+}
+function protectionTarget(){
+  var needed=['QB','RB','WR','TE'].filter(function(pos){return teamNeedsPos(state.teams[0],pos)});
+  var best=null,bestRisk=-999;
+  needed.forEach(function(pos){
+    var p=posAvailable(pos)[0];if(!p)return;
+    var w=waitRisk(p),s=starterSupply(pos),risk=w.score+(s<=4?5:s<=7?2:0)+(opponentsNeed(pos)>=6?2:0);
+    if(risk>bestRisk){bestRisk=risk;best={player:p,risk:risk,pos:pos,supply:s,wait:w}}
+  });
+  return best;
+}
+function strategicNomination(){
+  var buys=buyTargets().map(function(p){return p.id}),protect=protectionTarget();
+  var av=available().filter(function(p){return p.pos!=='K'&&p.pos!=='DEF'&&buys.indexOf(p.id)<0});
+  var best=null,bestScore=-999;
+  av.forEach(function(p){
+    var opp=opponentsNeed(p.pos),myNeed=teamNeedsPos(state.teams[0],p.pos),supply=starterSupply(p.pos);
+    var elite=Math.max(0,28-positionRank(p)*2);
+    var budgets=state.teams.slice(1).filter(function(t){return teamNeedsPos(t,p.pos)}).reduce(function(s,t){return s+Math.min(35,maxBid(t));},0)/20;
+    var protectPenalty=(protect&&protect.pos===p.pos&&protect.risk>=5)?32:0;
+    var myNeedPenalty=myNeed?(supply<=6?25:8):0;
+    var sc=opp*4+elite+budgets-myNeedPenalty-protectPenalty;
+    if(sc>bestScore){bestScore=sc;best=p}
+  });
+  return best;
+}
+function strategyReason(p){
+  if(!p)return'No nomination target available.';
+  var opp=opponentsNeed(p.pos),supply=starterSupply(p.pos),myNeed=teamNeedsPos(state.teams[0],p.pos);
+  return opp+' opponents still need '+p.pos+'. '+(myNeed?('You still need '+p.pos+', but '+supply+' starter-level options remain, so this nomination can drain money while preserving alternatives.'):'You do not currently need this position, making it a cleaner budget-drain nomination.');
+}
+
 function positionIntel(){return ['QB','RB','WR','TE'].map(function(pos){var supply=starterSupply(pos),opp=opponentsNeed(pos),run=recentRun(),hot=(run.pos===pos&&run.count>=3),max=pos==='QB'?20:pos==='RB'?40:pos==='WR'?50:16,pct=Math.max(4,Math.min(100,supply/max*100));return{pos:pos,supply:supply,opp:opp,hot:hot,pct:pct}})}
 function teamPositionCount(team,pos){return team.players.filter(function(p){return p.pos===pos}).length}
 function teamUrgencyFor(team,pos){var slots=assignment(team),openDirect=0,openFlex=0;slots.forEach(function(s){if(!s.filled&&s.x===pos)openDirect++;if(!s.filled&&s.x==='FLEX'&&(pos==='RB'||pos==='WR'||pos==='TE'))openFlex++});var urgency=openDirect*3+openFlex;var count=teamPositionCount(team,pos);if(pos==='QB'&&count===0)urgency+=3;if(pos==='QB'&&count===1)urgency+=2;if((pos==='RB'||pos==='WR')&&count===0)urgency+=2;return urgency}
@@ -272,7 +414,7 @@ function competitionRead(p){var x=opponentThreats(p),myCeil=maxBid(state.teams[0
 function targets(){return available().slice().sort(function(a,b){return score(b)-score(a)}).slice(0,3)}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function money(n){return '$'+Math.round(n)}
-function updateBidAdvice(){var el=document.getElementById('bidAdvice');if(!el)return;if(!state.selected){el.textContent='Select a player to see live bid guidance.';return}var b=parseInt(document.getElementById('bid').value||'0',10);var t=targetPrice(state.selected);el.innerHTML='<b>'+esc(state.selected.name)+'</b> · league value '+money(leagueValue(state.selected))+' · live target '+money(t)+'<br><span class="'+(b&&b>t*1.12?'negative':b&&b<=t*1.03?'positive':'warn')+'">'+bidCall(state.selected,b)+'</span>';}
+function updateBidAdvice(){var el=document.getElementById('bidAdvice');if(!el)return;if(!state.selected){el.textContent='Select a player to see projection-based bid guidance.';return}var b=parseInt(document.getElementById('bid').value||'0',10),cap=projectionSpendCap(state.selected),gain=Math.round(projectionGain(state.selected)),ret=Math.round(projectionRetention(state.selected)*100);var call=!b?'Projection cap '+money(cap):(b<=cap*.82?'BUY — strong projected production for the spend':b<=cap?'BUY — still inside your projection-based cap':b<=cap*1.08?'CAUTION — now paying away the efficiency edge':'PASS — price has erased the projection bargain');el.innerHTML='<b>'+esc(state.selected.name)+'</b> · '+customProj(state.selected)+' custom pts · +'+gain+' pts over projected replacement · '+ret+'% of top '+state.selected.pos+' projection<br><span class="'+(b&&b>cap?'warn':'positive')+'">'+call+'</span>';}
 function overlapNeeds(t){var positions=['QB','RB','WR','TE'],n=0,detail=[];positions.forEach(function(pos){if(teamNeedsPos(state.teams[0],pos)&&teamNeedsPos(t,pos)){n++;detail.push(pos)}});return{count:n,detail:detail}}
 function teamWarPower(t){var ov=overlapNeeds(t),open=openSlots(t),avg=avgSlot(t),mx=maxBid(t),cash=t.budget/state.budget;var power=ov.count*22+Math.min(25,mx/Math.max(1,state.budget)*55)+Math.min(20,avg/Math.max(1,state.budget/12)*12)+Math.min(15,cash*15);return{team:t,overlap:ov,open:open,avg:avg,max:mx,power:Math.round(power)}}
 function warRanks(){return state.teams.slice(1).map(teamWarPower).sort(function(a,b){return b.power-a.power})}
@@ -285,12 +427,215 @@ function renderEndgame(){var e=endgameState(),p=document.getElementById('endgame
 function renderBudgetWar(){var lev=budgetLeverage(),wars=warRanks(),rival=wars[0],atk=attackNomination(),rc=document.getElementById('roomControl');rc.textContent=lev.call;rc.className='control '+lev.cls;document.getElementById('controlReason').textContent='Max-bid rank #'+lev.maxRank+' · avg dollars/slot rank #'+lev.avgRank+' · you can currently outbid '+lev.outbid+' of opponents.';document.getElementById('maxBidEdge').textContent=lev.outbid+' of 9';document.getElementById('edgeWhy').textContent='Your legal max is '+money(lev.myMax)+' · rank #'+lev.maxRank+' in room';document.getElementById('cashPoor').textContent=lev.poor.length;document.getElementById('cashPoorWhy').textContent=lev.poor.length?lev.poor.slice(0,2).map(function(t){return t.name}).join(', ')+' losing flexibility':'Nobody is truly squeezed yet';if(rival){document.getElementById('biggestRival').textContent=rival.team.name;document.getElementById('rivalWhy').textContent=(rival.overlap.detail.length?rival.overlap.detail.join('/')+' needs overlap':'Budget threat')+' · '+money(rival.max)+' max bid';}if(atk.player){document.getElementById('attackNom').textContent=atk.player.name;document.getElementById('attackWhy').textContent=atk.victims.length?'Targets '+atk.victims.slice(0,2).map(function(x){return x.team.name}).join(' + '):'Useful budget-drain nomination';}document.getElementById('budgetTargets').innerHTML=wars.slice(0,4).map(function(r,i){var status=r.max<lev.myMax*.45?'CASH-POOR':r.power>=60?'DANGEROUS':'WATCH';return '<div class="attack"><div class="attackTitle">#'+(i+1)+' '+esc(r.team.name)+' <span class="badge">'+status+'</span></div><div class="muted">'+(r.overlap.detail.length?'Competes with you at '+r.overlap.detail.join(', '):'Limited roster overlap')+' · budget '+money(r.team.budget)+' · max '+money(r.max)+' · avg/slot '+money(r.avg.toFixed(1))+'</div></div>'}).join('');renderEndgame()}
 function render(){renderHero();renderTargets();renderIntelligence();renderPlayers();renderRecent();renderTeams();renderSelect();updateBidAdvice();saveState();}
 function renderHero(){var m=state.teams[0],o=openSlots(m);document.getElementById('myBudget').textContent=money(m.budget);document.getElementById('myOpen').textContent='remaining · '+o+' roster spots open';document.getElementById('myMax').textContent=money(maxBid(m));document.getElementById('myAvg').textContent=money(avgSlot(m).toFixed(1));document.getElementById('myCount').textContent=m.players.length+'/12';}
-function renderTargets(){var a=targets(),inf=inflation(),top=a[0];if(top){document.getElementById('bestTarget').textContent=top.name;document.getElementById('bestWhy').textContent='Custom projection '+customProj(top)+' · '+projectionTag(top)+' · league value '+money(leagueValue(top))+' · adjusted for 2-QB scarcity, roster need and room spending.';document.getElementById('bestPos').textContent=top.pos;document.getElementById('bestPrice').textContent='Target ≤ '+money(targetPrice(top));document.getElementById('inflationPill').textContent='Market '+(inf>=0?'+':'')+Math.round(inf*100)+'%';}
-var box=document.getElementById('topTargets');box.innerHTML=a.map(function(p,i){return '<div class="target"><div class="rank">#'+(i+1)+'</div><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · Tier '+tierOf(p).tier+' · '+projectionTag(p)+' · league '+money(leagueValue(p))+'</div></div><div class="targetScore">'+Math.round(score(p))+'</div></div>'}).join('');}
-function renderIntelligence(){var top=state.selected||targets()[0],call=roomCall(top),run=recentRun(),nom=nominationTarget(),intel=positionIntel();var d=document.getElementById('roomDecision');d.textContent=call.call;d.className='decision '+call.cls;document.getElementById('roomReason').textContent=call.reason;document.getElementById('hotPosition').textContent=run.window?run.pos+' · '+run.count+' of last '+run.window:'—';document.getElementById('runDetail').textContent=run.count>=3?'Positional run detected':'No meaningful run yet';if(nom){document.getElementById('nominatePlayer').textContent=nom.name;document.getElementById('nominateWhy').textContent=opponentsNeed(nom.pos)+' opponents still need '+nom.pos+' · try to drain room budget';}var tight=intel.slice().sort(function(a,b){return (a.supply-b.supply)||(b.opp-a.opp)})[0];document.getElementById('starterSupply').textContent=tight.pos+' · '+tight.supply+' left';document.getElementById('supplyDetail').textContent='Starter-quality options remaining';var press=intel.slice().sort(function(a,b){return b.opp-a.opp})[0];document.getElementById('oppPressure').textContent=press.pos+' · '+press.opp+' teams';document.getElementById('pressureDetail').textContent='Opponents with an open '+press.pos+'/FLEX need';document.getElementById('positionIntel').innerHTML=intel.map(function(x){return '<div class="positionRow"><div class="pos">'+x.pos+'</div><div><div class="pname">'+x.supply+' starter-level left'+(x.hot?' · RUN':'')+'</div><div class="meter"><div style="width:'+x.pct+'%"></div></div></div><div class="right"><div class="targetScore">'+x.opp+'</div><div class="tiny">OPP NEED</div></div></div>'}).join('');document.getElementById('tierWatch').innerHTML=['QB','RB','WR','TE'].map(function(pos){var m=tierMap(pos),first=m[0];if(!first)return'';var ci=cliffInfo(first.player),risk=waitRisk(first.player),tag=risk.score>=6?'HIGH RISK':risk.score>=3?'WATCH':'SAFE TO WAIT';return '<div class="positionRow"><div class="pos">'+pos+'</div><div><div class="pname">Tier '+ci.tier+' · '+ci.toCliff+' before cliff</div><div class="muted">'+(ci.next?('Next tier starts near '+ci.next.player.name+' · ~'+Math.round(ci.nextDrop*100)+'% drop'):'No major cliff detected')+'</div></div><div class="right"><div class="tiny">'+tag+'</div></div></div>'}).join('');var cr=competitionRead(top);document.getElementById('opponentSummary').innerHTML='<b>'+esc(top.name)+'</b> · competition <span class="'+cr.cls+'">'+cr.call+'</span> · suggested stop '+money(cr.stop)+'<br>'+cr.why+'. '+(cr.serious.length<=2?'You may be able to wait for a cleaner price.':'Expect active bidding; do not assume the room will let him fall.');document.getElementById('opponentModel').innerHTML=cr.all.slice(0,5).map(function(o,i){return '<div class="threat"><div class="num">#'+(i+1)+'</div><div class="pinfo"><div class="pname">'+esc(o.team.name)+'</div><div class="muted">Budget '+money(o.budget)+' · max '+money(o.max)+' · realistic ceiling '+money(o.ceiling)+' · need '+(o.urg>=7?'URGENT':o.urg>=4?'MEDIUM':'LOW')+'</div></div><div class="threatScore">'+o.threat+'<div>'+(o.ceiling>=targetPrice(top)*.95?'<span class="dangerTag">THREAT</span>':'<span class="safeTag">LIMITED</span>')+'</div></div></div>'}).join('')||'<div class="note">No opponent currently has both the roster need and budget to seriously challenge you for this position.</div>';renderBudgetWar()}
-function renderPlayers(){var list=available().filter(function(p){return(state.filter==='ALL'||p.pos===state.filter)&&p.name.toLowerCase().indexOf(state.query.toLowerCase())>=0}).sort(function(a,b){return score(b)-score(a)});document.getElementById('playerList').innerHTML=list.slice(0,14).map(playerHtml).join('')||'<div class="muted" style="padding:15px 0">No players match.</div>';document.getElementById('fullPlayers').innerHTML=list.map(function(p,i){return '<div class="player"><div class="rank">'+(i+1)+'</div><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · Tier '+tierOf(p).tier+' · '+projectionTag(p)+' · league '+money(leagueValue(p))+'</div></div><div class="targetScore">'+Math.round(score(p))+'</div></div>'}).join('');bindPlayers();}
-function playerHtml(p){return '<div class="player '+(state.selected&&state.selected.id===p.id?'selected':'')+'" data-id="'+p.id+'"><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · Tier '+tierOf(p).tier+' · '+projectionTag(p)+'</div></div><div class="value">'+money(leagueValue(p))+'</div></div>'}
-function bindPlayers(){var els=document.querySelectorAll('#playerList .player');for(var i=0;i<els.length;i++)els[i].onclick=function(){var id=+this.getAttribute('data-id');state.selected=players.filter(function(p){return p.id===id})[0];document.getElementById('selectedName').textContent=state.selected.name;document.getElementById('selectedInfo').textContent=state.selected.pos+' · '+state.selected.nfl+' · '+customProj(state.selected)+' custom pts · Tier '+tierOf(state.selected).tier+' · '+projectionTag(state.selected)+' · league value '+money(leagueValue(state.selected));renderPlayers();updateBidAdvice();}}
+
+function teamAffordableCount(pos,price){
+  return state.teams.slice(1).filter(function(t){return teamNeedsPos(t,pos)&&maxBid(t)>=price}).length;
+}
+function positionWaitRead(pos){
+  var list=posAvailable(pos).slice().sort(function(a,b){return customProj(b)-customProj(a)});
+  if(!list.length)return {canWait:false,reason:'No players remain at '+pos+'.',target:null};
+  var target=list[0],supply=starterSupply(pos),needers=opponentsNeed(pos),cap=projectionSpendCap(target);
+  var afford=teamAffordableCount(pos,cap),gain=projectionGain(target),risk=waitRisk(target);
+  var canWait=(supply>=8 && needers<=5 && afford<=4 && gain<45) || (supply>=10 && needers<=6);
+  var reason;
+  if(canWait){
+    reason='You can wait on '+pos+' for now. '+supply+' starter-level options remain, '+needers+' opponents still need the position, and only '+afford+' of them can currently afford about '+money(cap)+' for the top target.';
+  }else{
+    reason='Do not wait too long on '+pos+'. '+supply+' starter-level options remain, '+needers+' opponents still need it, and '+afford+' can afford the current top target. '+target.name+' is the protection target.';
+  }
+  return {canWait:canWait,reason:reason,target:target,supply:supply,needers:needers,afford:afford,cap:cap,gain:gain,risk:risk};
+}
+function bestBuyForPos(pos){
+  var list=available().filter(function(p){return p.pos===pos}).sort(function(a,b){return buyEfficiencyScore(b)-buyEfficiencyScore(a)});
+  return list[0]||null;
+}
+function findPlayerFromQuestion(q){
+  var low=q.toLowerCase();
+  var exact=players.filter(function(p){return low.indexOf(p.name.toLowerCase())>=0});
+  if(exact.length)return exact.sort(function(a,b){return b.name.length-a.name.length})[0];
+  var tokens=low.split(/[^a-z0-9]+/).filter(function(x){return x.length>=4});
+  var scored=players.map(function(p){
+    var n=p.name.toLowerCase(),s=0;tokens.forEach(function(t){if(n.indexOf(t)>=0)s+=t.length});
+    return {p:p,s:s}
+  }).filter(function(x){return x.s>0}).sort(function(a,b){return b.s-a.s});
+  return scored[0]?scored[0].p:null;
+}
+function answerTarget(pos){
+  var p=bestBuyForPos(pos);
+  if(!p)return 'There are no '+pos+' options left.';
+  var wait=positionWaitRead(pos),cap=projectionSpendCap(p),th=opponentThreatsFor(p),top=th[0],gm=gmDecisionFor(p);
+  var threatText=top?('<br><br><b>Biggest threat:</b> '+esc(top.name)+' — '+Math.round(top.prob*100)+'% outbid risk, likely willing to go about '+money(top.w)+', legal max '+money(top.legal)+'.'):'';
+  return '<b>'+gm.call+': '+esc(p.name)+'</b><br>'+esc(gm.reason)+'<br><br>Projection cap: <b>'+money(cap)+'</b> · '+customProj(p)+' custom pts · +'+Math.round(projectionGain(p))+' over replacement.'+threatText+'<br><br>'+esc(wait.reason);
+}
+function answerNomination(){
+  var p=strategicNomination(),protect=protectionTarget();
+  if(!p)return 'I do not have a clean nomination target right now.';
+  var ans='<b>Nominate '+esc(p.name)+'.</b> '+esc(strategyReason(p));
+  if(protect)ans+='<br><br><span class="warn">Protect '+protect.pos+':</span> '+esc(protect.player.name)+' is the player I would make sure you do not wait past if that tier starts moving.';
+  return ans;
+}
+function answerWhatCanWait(){
+  var reads=['QB','RB','WR','TE'].map(function(pos){return {pos:pos,r:positionWaitRead(pos)}})
+    .sort(function(a,b){
+      var sa=(a.r.canWait?100:0)+a.r.supply*3-a.r.needers*4-a.r.afford*2;
+      var sb=(b.r.canWait?100:0)+b.r.supply*3-b.r.needers*4-b.r.afford*2;
+      return sb-sa;
+    });
+  var best=reads[0],urgent=reads[reads.length-1];
+  return '<b>'+best.pos+' is the safest position to wait on right now.</b><br>'+esc(best.r.reason)+'<br><br><span class="warn">Most urgent:</span> '+urgent.pos+'. '+esc(urgent.r.reason);
+}
+function answerPlayer(p){
+  if(!p)return 'I could not match that player. Try typing the player’s full name.';
+  if(!isAvailable(p))return '<b>'+esc(p.name)+'</b> has already been drafted.';
+  var cap=projectionSpendCap(p),gain=Math.round(projectionGain(p)),ret=Math.round(projectionRetention(p)*100),need=teamNeedsPos(state.teams[0],p.pos);
+  var th=opponentThreatsFor(p),top=th[0],gm=gmDecisionFor(p);
+  return '<b>'+gm.call+': '+esc(p.name)+'</b><br>'+esc(gm.reason)+'<br><br>My max: <b>'+money(cap)+'</b>. He gives you '+customProj(p)+' custom points, +'+gain+' over replacement, and '+ret+'% of the top available '+p.pos+' projection.'+(top?'<br><br><b>Outbid watch:</b> '+esc(top.name)+' · '+Math.round(top.prob*100)+'% risk · likely max '+money(top.w)+' · legal max '+money(top.legal)+'.':'')+(need?'<br><br>You still need this position, so the AI is willing to be more aggressive if the tier is thinning.':'<br><br>You do not currently need this position, so the AI will not chase above the projection cap.');
+}
+function auctionAssistantAnswer(q){
+  q=(q||'').trim();if(!q)return 'Ask a question first.';
+  var low=q.toLowerCase();
+  if(low.indexOf('nominate')>=0)return answerNomination();
+  var pos=null;['QB','RB','WR','TE','K','DEF'].forEach(function(x){if(new RegExp('\\b'+x.toLowerCase()+'\\b').test(low))pos=x});
+  if((low.indexOf('wait')>=0||low.indexOf('hold')>=0)&&pos)return '<b>'+(positionWaitRead(pos).canWait?'YES — WAIT':'NO — PROTECT IT')+'</b><br>'+esc(positionWaitRead(pos).reason);
+  if((low.indexOf('which position')>=0&&low.indexOf('wait')>=0)||low.indexOf('what can wait')>=0)return answerWhatCanWait();
+  if(pos && (low.indexOf('target')>=0||low.indexOf('next')>=0||low.indexOf('buy')>=0||low.indexOf('get')>=0))return answerTarget(pos);
+  var p=findPlayerFromQuestion(q);
+  if(p&&(low.indexOf('pay')>=0||low.indexOf('spend')>=0||low.indexOf('worth')>=0||low.indexOf('buy')>=0||low.indexOf('player')>=0))return answerPlayer(p);
+  if(low.indexOf('outbid')>=0||low.indexOf('fight me')>=0||low.indexOf('bid against me')>=0){var gp=gmBestBuy();if(!gp)return 'No current buy target.';var gt=opponentThreatsFor(gp),g=gt[0];return g?('<b>'+esc(g.name)+'</b> is the biggest current threat on '+esc(gp.name)+'. Estimated '+Math.round(g.prob*100)+'% chance to keep pushing, likely to about '+money(g.w)+', with a legal max of '+money(g.legal)+'.'):'No major outbid threat detected.';}
+  if(low.indexOf('best bargain')>=0||low.indexOf('best value')>=0||low.indexOf('spend on')>=0||low.indexOf('best team')>=0){
+    var b=buyTargets()[0];return b?answerPlayer(b):'No buy target available.';
+  }
+  if(pos)return answerTarget(pos);
+  return 'Try asking: <b>“Which RB should I target next?”</b>, <b>“Can I wait on WR?”</b>, <b>“Who should I nominate?”</b>, or <b>“How much should I pay for [player]?”</b>';
+}
+function wireAuctionAssistant(){
+  var input=document.getElementById('aiQuestion'),btn=document.getElementById('aiAskBtn'),ans=document.getElementById('aiAnswer');
+  function ask(q){if(q!=null)input.value=q;ans.innerHTML=auctionAssistantAnswer(input.value)}
+  if(btn)btn.onclick=function(){ask()};
+  if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();ask()}});
+  document.querySelectorAll('[data-aiq]').forEach(function(b){b.onclick=function(){ask(b.getAttribute('data-aiq'))}});
+}
+
+
+function starterProjection(team){
+  var a=assignment(team),sum=0;
+  a.forEach(function(s){
+    if(!s.filled)return;
+    var p=s.player||s.p||null;
+    if(p)sum+=customProj(p);
+  });
+  return sum;
+}
+function projectedTeamStrengthIfBuy(p){
+  var me=state.teams[0],clone={
+    name:me.name,budget:me.budget,roster:(me.roster||[]).slice(),startBudget:me.startBudget||350
+  };
+  clone.roster.push({player:p,bid:projectionSpendCap(p)});
+  return starterProjection(clone);
+}
+function currentStarterStrength(){
+  return starterProjection(state.teams[0]);
+}
+function opponentHistory(teamIndex){
+  var picks=state.picks.filter(function(x){
+    return Number(x.teamIndex)===teamIndex || Number(x.team)===teamIndex
+  });
+  if(!picks.length)return {avgOver:0,aggression:.5,count:0};
+  var overs=[],aggr=0;
+  picks.forEach(function(x){
+    if(!x.player)return;
+    var cap=projectionSpendCap(x.player);
+    var bid=Number(x.bid||0);
+    if(cap>0)overs.push((bid-cap)/cap);
+    if(bid>cap*1.05)aggr+=1;
+    else if(bid>cap*.9)aggr+=.6;
+    else aggr+=.25;
+  });
+  return {
+    avgOver:overs.length?overs.reduce(function(a,b){return a+b},0)/overs.length:0,
+    aggression:Math.max(.1,Math.min(1,aggr/picks.length)),
+    count:picks.length
+  };
+}
+function opponentWillingness(teamIndex,p){
+  var t=state.teams[teamIndex],hist=opponentHistory(teamIndex),legal=maxBid(t);
+  if(!teamNeedsPos(t,p.pos))return Math.min(legal,Math.max(1,projectionSpendCap(p)*.52));
+  var base=projectionSpendCap(p);
+  var needBoost=teamNeedsPos(t,p.pos)?1.12:.72;
+  var scarcity=starterSupply(p.pos)<=5?1.13:starterSupply(p.pos)<=8?1.06:1;
+  var behavior=1+Math.max(-.18,Math.min(.28,hist.avgOver*.65 + (hist.aggression-.5)*.22));
+  return Math.max(1,Math.min(legal,Math.round(base*needBoost*scarcity*behavior)));
+}
+function outbidProbability(teamIndex,p,myCap){
+  var t=state.teams[teamIndex];
+  if(!teamNeedsPos(t,p.pos))return 0.05;
+  var legal=maxBid(t),w=opponentWillingness(teamIndex,p),hist=opponentHistory(teamIndex);
+  var afford=legal>=myCap?1:.25;
+  var willingness=w>=myCap?1:Math.max(.1,w/myCap);
+  var scarcity=starterSupply(p.pos)<=5?.18:starterSupply(p.pos)<=8?.10:0;
+  var prob=.12 + afford*.20 + willingness*.36 + hist.aggression*.20 + scarcity;
+  return Math.max(.03,Math.min(.95,prob));
+}
+function opponentThreatsFor(p){
+  var cap=projectionSpendCap(p);
+  return state.teams.slice(1).map(function(t,i){
+    var idx=i+1,prob=outbidProbability(idx,p,cap),w=opponentWillingness(idx,p),legal=maxBid(t),hist=opponentHistory(idx);
+    return {idx:idx,name:t.name,prob:prob,w:w,legal:legal,aggr:hist.aggression,need:teamNeedsPos(t,p.pos)}
+  }).filter(function(x){return x.need||x.prob>=.25}).sort(function(a,b){return b.prob-a.prob});
+}
+function rosterOptimizationScore(p){
+  var me=state.teams[0],cap=projectionSpendCap(p),reserve=minimumReserve(me),after=Math.max(0,me.budget-cap);
+  var open=Math.max(0,openSlots(me)-1),futureReserve=Math.max(0,open-1);
+  if(after<futureReserve)return -9999;
+  var teamLift=Math.max(0,projectedTeamStrengthIfBuy(p)-currentStarterStrength());
+  var gain=projectionGain(p);
+  var scarcity=starterSupply(p.pos)<=5?28:starterSupply(p.pos)<=8?14:0;
+  var need=teamNeedsPos(me,p.pos)?26:-8;
+  var threats=opponentThreatsFor(p),topThreat=threats[0]?threats[0].prob:0;
+  var flexibility=Math.max(0,Math.min(25,(after-futureReserve)/(Math.max(1,me.budget))*25));
+  var overspendPenalty=cap>me.budget*.45?18:cap>me.budget*.32?8:0;
+  return teamLift*1.25 + gain*.75 + scarcity + need + flexibility + topThreat*10 - overspendPenalty;
+}
+function gmBestBuy(){
+  return available().filter(function(p){return p.pos!=='K'&&p.pos!=='DEF'})
+    .slice().sort(function(a,b){return rosterOptimizationScore(b)-rosterOptimizationScore(a)})[0]||null;
+}
+function gmDecisionFor(p){
+  if(!p)return {call:'WAIT',reason:'No player selected.'};
+  var cap=projectionSpendCap(p),score=rosterOptimizationScore(p),th=opponentThreatsFor(p),top=th[0];
+  var me=state.teams[0],after=me.budget-cap,open=Math.max(0,openSlots(me)-1),reserve=Math.max(0,open-1);
+  if(score>95)return {call:'BUY',reason:'This player materially improves the projected final roster while preserving enough money to finish.'};
+  if(top&&top.prob>.68&&teamNeedsPos(me,p.pos)&&starterSupply(p.pos)<=6)return {call:'BUY SOON',reason:'The tier is thin and an opponent is likely to push the bidding. Waiting risks losing projected points you may not recover later.'};
+  if(after<reserve+8)return {call:'WAIT',reason:'The player is good, but this price would reduce flexibility too much for the remaining roster.'};
+  if(score<45)return {call:'PASS',reason:'The projected roster gain is too small for the dollars required.'};
+  return {call:'DISCIPLINE',reason:'Stay in only to the projection-based cap. Do not let the room force you above the point where the full roster gets worse.'};
+}
+function renderAuctionGM(){
+  var p=gmBestBuy(),me=state.teams[0],spend=Math.max(0,me.budget-minimumReserve(me));
+  document.getElementById('gmTeamStrength').textContent=Math.round(currentStarterStrength())+' pts';
+  document.getElementById('gmSpendable').textContent=money(spend);
+  document.getElementById('gmBestBuy').textContent=p?p.name:'—';
+  if(!p){document.getElementById('gmOutbidRisk').textContent='—';document.getElementById('gmThreatList').innerHTML='';return}
+  var threats=opponentThreatsFor(p),top=threats[0],risk=top?Math.round(top.prob*100):0;
+  document.getElementById('gmOutbidRisk').textContent=risk+'%';
+  var d=gmDecisionFor(p);
+  document.getElementById('gmHeadline').textContent=d.call+' · '+p.name;
+  document.getElementById('gmSummary').textContent=d.reason+' Projection cap '+money(projectionSpendCap(p))+'.';
+  document.getElementById('gmThreatList').innerHTML=threats.slice(0,5).map(function(x){
+    var cls=x.prob>=.67?'probHigh':x.prob>=.38?'probMed':'probLow';
+    return '<div class="threatRow2"><div><div class="threatTeam">'+esc(x.name)+'</div><div class="threatMeta">Likely max '+money(x.w)+' · legal max '+money(x.legal)+' · '+(x.need?'needs ':'does not need ')+p.pos+'</div></div><div class="threatProb '+cls+'">'+Math.round(x.prob*100)+'%</div></div>'
+  }).join('')||'<div class="muted">No major bidding threat detected.</div>';
+}
+
+function renderTargets(){renderAuctionGM();var nom=strategicNomination(),buys=buyTargets(),top=buys[0],protect=protectionTarget(),inf=inflation();
+if(nom){document.getElementById('bestTarget').textContent=nom.name;document.getElementById('bestWhy').textContent=strategyReason(nom);document.getElementById('bestPos').textContent=nom.pos+' · '+nom.nfl;document.getElementById('bestPrice').textContent=opponentsNeed(nom.pos)+' teams need '+nom.pos;document.getElementById('inflationPill').textContent='Room '+(inf>=0?'+':'')+Math.round(inf*100)+'%';}
+if(protect){document.getElementById('protectLine').innerHTML='<b>PROTECT '+protect.pos+':</b> '+esc(protect.player.name)+' is your current safety target. '+protect.supply+' starter-level '+protect.pos+' options remain.';}else document.getElementById('protectLine').textContent='Protection check: your roster has enough depth to stay flexible.';
+if(top){document.getElementById('buyTarget').textContent=top.name;document.getElementById('buyWhy').textContent='High projection without the biggest star-price tax: '+customProj(top)+' custom pts, '+Math.round(projectionRetention(top)*100)+'% of the top available '+top.pos+' projection, and +'+Math.round(projectionGain(top))+' pts over the projected replacement level.';document.getElementById('buyPos').textContent=top.pos+' · '+top.nfl;document.getElementById('buyCap').textContent='Max spend '+money(projectionSpendCap(top));document.getElementById('buyEdge').textContent='+'+Math.round(projectionGain(top))+' pts vs replacement';}
+var box=document.getElementById('topTargets');box.innerHTML=buys.slice(0,3).map(function(p,i){return '<div class="target"><div class="rank">#'+(i+1)+'</div><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · '+Math.round(projectionRetention(p)*100)+'% of top '+p.pos+' · cap '+money(projectionSpendCap(p))+'</div></div><div class="targetScore">+'+Math.round(projectionGain(p))+'</div></div>'}).join('');}
+function renderIntelligence(){var top=state.selected||targets()[0],call=roomCall(top),run=recentRun(),nom=protectionTarget(),intel=positionIntel();var d=document.getElementById('roomDecision');d.textContent=call.call;d.className='decision '+call.cls;document.getElementById('roomReason').textContent=call.reason;document.getElementById('hotPosition').textContent=run.window?run.pos+' · '+run.count+' of last '+run.window:'—';document.getElementById('runDetail').textContent=run.count>=3?'Positional run detected':'No meaningful run yet';if(nom){document.getElementById('nominatePlayer').textContent=nom.player.name;document.getElementById('nominateWhy').textContent='Protect '+nom.pos+' · '+nom.supply+' starter-level options remain · wait risk '+nom.risk;}var tight=intel.slice().sort(function(a,b){return (a.supply-b.supply)||(b.opp-a.opp)})[0];document.getElementById('starterSupply').textContent=tight.pos+' · '+tight.supply+' left';document.getElementById('supplyDetail').textContent='Starter-quality options remaining';var press=intel.slice().sort(function(a,b){return b.opp-a.opp})[0];document.getElementById('oppPressure').textContent=press.pos+' · '+press.opp+' teams';document.getElementById('pressureDetail').textContent='Opponents with an open '+press.pos+'/FLEX need';document.getElementById('positionIntel').innerHTML=intel.map(function(x){return '<div class="positionRow"><div class="pos">'+x.pos+'</div><div><div class="pname">'+x.supply+' starter-level left'+(x.hot?' · RUN':'')+'</div><div class="meter"><div style="width:'+x.pct+'%"></div></div></div><div class="right"><div class="targetScore">'+x.opp+'</div><div class="tiny">OPP NEED</div></div></div>'}).join('');document.getElementById('tierWatch').innerHTML=['QB','RB','WR','TE'].map(function(pos){var m=tierMap(pos),first=m[0];if(!first)return'';var ci=cliffInfo(first.player),risk=waitRisk(first.player),tag=risk.score>=6?'HIGH RISK':risk.score>=3?'WATCH':'SAFE TO WAIT';return '<div class="positionRow"><div class="pos">'+pos+'</div><div><div class="pname">Tier '+ci.tier+' · '+ci.toCliff+' before cliff</div><div class="muted">'+(ci.next?('Next tier starts near '+ci.next.player.name+' · ~'+Math.round(ci.nextDrop*100)+'% drop'):'No major cliff detected')+'</div></div><div class="right"><div class="tiny">'+tag+'</div></div></div>'}).join('');var cr=competitionRead(top);document.getElementById('opponentSummary').innerHTML='<b>'+esc(top.name)+'</b> · competition <span class="'+cr.cls+'">'+cr.call+'</span> · suggested stop '+money(cr.stop)+'<br>'+cr.why+'. '+(cr.serious.length<=2?'You may be able to wait for a cleaner price.':'Expect active bidding; do not assume the room will let him fall.');document.getElementById('opponentModel').innerHTML=cr.all.slice(0,5).map(function(o,i){return '<div class="threat"><div class="num">#'+(i+1)+'</div><div class="pinfo"><div class="pname">'+esc(o.team.name)+'</div><div class="muted">Budget '+money(o.budget)+' · max '+money(o.max)+' · realistic ceiling '+money(o.ceiling)+' · need '+(o.urg>=7?'URGENT':o.urg>=4?'MEDIUM':'LOW')+'</div></div><div class="threatScore">'+o.threat+'<div>'+(o.ceiling>=targetPrice(top)*.95?'<span class="dangerTag">THREAT</span>':'<span class="safeTag">LIMITED</span>')+'</div></div></div>'}).join('')||'<div class="note">No opponent currently has both the roster need and budget to seriously challenge you for this position.</div>';renderBudgetWar()}
+function renderPlayers(){var list=available().filter(function(p){return(state.filter==='ALL'||p.pos===state.filter)&&p.name.toLowerCase().indexOf(state.query.toLowerCase())>=0}).sort(function(a,b){return score(b)-score(a)});document.getElementById('playerList').innerHTML=list.slice(0,14).map(playerHtml).join('')||'<div class="muted" style="padding:15px 0">No players match.</div>';document.getElementById('fullPlayers').innerHTML=list.map(function(p,i){return '<div class="player"><div class="rank">'+(i+1)+'</div><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · Tier '+tierOf(p).tier+' · '+projectionTag(p)+' · projection cap '+money(projectionSpendCap(p))+'</div></div><div class="targetScore">'+Math.round(score(p))+'</div></div>'}).join('');bindPlayers();}
+function playerHtml(p){return '<div class="player '+(state.selected&&state.selected.id===p.id?'selected':'')+'" data-id="'+p.id+'"><div class="pos">'+p.pos+'</div><div class="pinfo"><div class="pname">'+esc(p.name)+'</div><div class="muted">'+p.nfl+' · '+customProj(p)+' custom pts · Tier '+tierOf(p).tier+' · '+projectionTag(p)+'</div></div><div class="value">'+money(projectionSpendCap(p))+'</div></div>'}
+function bindPlayers(){var els=document.querySelectorAll('#playerList .player');for(var i=0;i<els.length;i++)els[i].onclick=function(){var id=+this.getAttribute('data-id');state.selected=players.filter(function(p){return p.id===id})[0];document.getElementById('selectedName').textContent=state.selected.name;document.getElementById('selectedInfo').textContent=state.selected.pos+' · '+state.selected.nfl+' · '+customProj(state.selected)+' custom pts · Tier '+tierOf(state.selected).tier+' · '+projectionTag(state.selected)+' · projection cap '+money(projectionSpendCap(state.selected));renderPlayers();updateBidAdvice();}}
 function renderRecent(){var r=document.getElementById('recent');if(!state.picks.length){r.innerHTML='<div class="recent"><div class="num">—</div><div class="pinfo"><div class="pname">No picks yet</div><div class="muted">Draft entries will appear here</div></div></div>';return}r.innerHTML=state.picks.slice().reverse().slice(0,8).map(function(p){return '<div class="recent"><div class="num">#'+p.no+'</div><div class="pinfo"><div class="pname">'+esc(p.player.name)+'</div><div class="muted">'+esc(state.teams[p.team].name)+' · '+p.player.pos+'</div></div><div class="price">'+money(p.bid)+'</div></div>'}).join('')}
 function renderTeams(){document.getElementById('teamCards').innerHTML=state.teams.map(function(t){var slots=assignment(t),spent=state.budget-t.budget;return '<div class="teamcard"><div class="teamhead"><div><div class="teamname">'+esc(t.name)+'</div><div class="tiny">'+t.players.length+'/12 players · '+openSlots(t)+' open</div></div><div class="right"><div class="value">'+money(t.budget)+'</div><div class="tiny">max '+money(maxBid(t))+'</div></div></div><div class="bar"><div style="width:'+Math.min(100,(spent/state.budget*100))+'%"></div></div><div class="rosterchips">'+slots.map(function(s){return '<span class="slot '+(s.filled?'filled':'')+'">'+s.x+(s.filled?': '+esc(s.filled.name.split(' ').pop()):'')+'</span>'}).join('')+'</div></div>'}).join('')}
 function renderSelect(){var s=document.getElementById('winningTeam'),cur=s.value;s.innerHTML=state.teams.map(function(t){return '<option value="'+t.id+'">'+esc(t.name)+' · '+money(t.budget)+'</option>'}).join('');if(cur)s.value=cur}
@@ -429,7 +774,7 @@ render();
         if(btn){btn.click();success=true}
       }catch(e){}
     }
-    if(success){liveSelected=null; const b=document.getElementById('liveBid'); if(b)b.value=''; setTimeout(()=>{renderAll();},20);}
+    if(success){liveSelected=null; const b=document.getElementById('liveBid'); if(b)b.value=''; setTimeout(()=>{renderAll();wireAuctionAssistant();},20);}
   }
   function undoLive(){
     const btn=[...document.querySelectorAll('button')].find(b=>/undo last|undo/i.test(b.textContent)&&b.id!=='liveUndoBtn');
